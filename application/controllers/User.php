@@ -13,6 +13,7 @@ class User extends CI_Controller
         $this->load->database();
         $this->load->model('Model_user');
         $this->load->library('session');
+        $this->load->helper('url');
     }
 
     /*
@@ -32,22 +33,45 @@ class User extends CI_Controller
 
                 if( $this->Model_user->vk_auth($user->response[0]) ) {
 
-                    $this->session->set_userdata( (array) $user->response[0]);
+                    $this->session->set_userdata( array("user" => (array) $user->response[0] ) );
                     // Редирект на главную
+                    redirect( base_url() );
 
                 } else {
 
-                    // Ошибка авторизации
+                    // Ошибка базы
+                    echo "Ошибка базы данных.";
                 }
 
             } else {
 
                 // Какая то ошибка, не пришел токен
+                echo "Ошибка Вконтакте.";
             }
 
         } else {
 
             // Код не пришел
+            show_404();
+        }
+    }
+
+    /*
+     * Выход из личного кабинета
+    */
+
+    public function out()
+    {
+        // Если пользователь авторизован
+        if( isset($this->session->user["uid"]) ) {
+
+            // Удаляем всю информацию о пользвателе
+            $this->session->unset_userdata("user");
+            redirect( base_url() );
+
+        } else {
+
+            show_404();
         }
     }
 

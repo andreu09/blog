@@ -1,0 +1,36 @@
+<html lang="ru">
+    <head>
+
+        <meta charset="UTF-8">
+        <title>{{ title  }}</title>
+        <link rel="stylesheet" href="assets/semantic.min.css">
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
+        <script src="assets/js/semantic.min.js"></script>
+        <script src="assets/components/dropdown.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <div class="ui small menu">
+            <a href="/" class="  {% if title == "Главная" %} active {% endif %} item">
+                <i class="big camera retro icon"></i>
+            </a>
+            <a class="item disabled">
+                Новости
+            </a>
+            <div class="right menu">
+                {% if user.uid is defined  %}
+                <div class="ui dropdown item">
+                    <img class="ui avatar image" src="{{ user.photo_50 }}"> {{ user.first_name }} {{ user.last_name }} <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="user/out" class="item">Выйти</a>
+                    </div>
+                </div>
+                {% else %}
+                <div class="item">
+                    <a onclick="$(this).addClass('loading')" class="ui primary button" style="color:white" href="https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://blog.loc/user/vk_auth&response_type=code&v=5.64">Войти</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
