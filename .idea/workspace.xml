@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bf38b85-262f-40b2-b890-3d0c2c3c544e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/News.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/admin.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/news.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/39/10/34a7fdf881c6f5d39352f303c4b3.php" afterPath="$PROJECT_DIR$/application/cache/twig/39/10/34a7fdf881c6f5d39352f303c4b3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/4a/1b/d5613b5d53ac39a382b54c85d229.php" afterPath="$PROJECT_DIR$/application/cache/twig/4a/1b/d5613b5d53ac39a382b54c85d229.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/ef/6b/721787e0268665afa1e47a063853.php" afterPath="$PROJECT_DIR$/application/cache/twig/ef/6b/721787e0268665afa1e47a063853.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Feed.php" afterPath="$PROJECT_DIR$/application/controllers/Feed.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/User.php" afterPath="$PROJECT_DIR$/application/controllers/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_user.php" afterPath="$PROJECT_DIR$/application/models/Model_user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/twig/header.twig" afterPath="$PROJECT_DIR$/application/views/twig/header.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -271,7 +260,7 @@
       <workItem from="1494338600881" duration="18046000" />
       <workItem from="1494443625463" duration="2846000" />
       <workItem from="1494522336376" duration="66000" />
-      <workItem from="1494522654156" duration="2786000" />
+      <workItem from="1494522654156" duration="3289000" />
     </task>
     <task id="LOCAL-00001" summary="Главная страница авторизованного пользователя">
       <created>1494444470645</created>
@@ -287,11 +276,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494444577146</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Добавлена страница с админ панелью,страница новостей">
+      <created>1494529644217</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1494529644217</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119662000" />
+    <option name="totallyTimeSpent" value="120165000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
@@ -345,7 +341,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Главная страница авторизованного пользователя" />
     <MESSAGE value="Все изменения по поводу авторизации" />
-    <option name="LAST_COMMIT_MESSAGE" value="Все изменения по поводу авторизации" />
+    <MESSAGE value="Добавлена страница с админ панелью,страница новостей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена страница с админ панелью,страница новостей" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
