@@ -260,7 +260,7 @@
       <workItem from="1494338600881" duration="18046000" />
       <workItem from="1494443625463" duration="2846000" />
       <workItem from="1494522336376" duration="66000" />
-      <workItem from="1494522654156" duration="3289000" />
+      <workItem from="1494522654156" duration="3298000" />
     </task>
     <task id="LOCAL-00001" summary="Главная страница авторизованного пользователя">
       <created>1494444470645</created>
@@ -283,11 +283,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494529644217</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Добавлена страница с админ панелью,страница новостей">
+      <created>1494529658566</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1494529658566</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120165000" />
+    <option name="totallyTimeSpent" value="120174000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
