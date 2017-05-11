@@ -45,6 +45,20 @@ class Model_user extends CI_Model
                 return null;
             }
         }
+    }
 
+    public function get($uid)
+    {
+        $query = $this->db->get_where('users', array('uid' => $uid))->row();
+
+        // Если такого uid не существует тогда возвратим null
+        if($query !== null) {
+
+            return $query;
+
+        } else {
+
+            return null;
+        }
     }
 }

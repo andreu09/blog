@@ -19,7 +19,7 @@ class Feed extends CI_Controller
 
         } else {
 
-            echo $this->twig->render("welcome.php", array("title" => "Подтверждение входа", "base_url" => base_url()));
+            echo $this->twig->render("welcome.php", array("title" => "Подтверждение входа", "base_url" => base_url() ) );
         }
     }
 }

@@ -33,6 +33,9 @@ class User extends CI_Controller
 
                 if( $this->Model_user->vk_auth($user->response[0]) ) {
 
+                    // Добавляем статус пользователя
+                    $user->response[0]->status = $this->Model_user->get($user->response[0]->uid)->status;
+                    // Все вместе заносим в сессию
                     $this->session->set_userdata( array("user" => (array) $user->response[0] ) );
                     // Редирект на главную
                     redirect( base_url() );
@@ -72,6 +75,29 @@ class User extends CI_Controller
         } else {
 
             show_404();
+        }
+    }
+
+    /*
+     * Получение информации о пользователе зная его uid
+    */
+
+    public function get($uid = "")
+    {
+        if($uid === "") {
+
+            echo "Неизвестный uid";
+
+        } else {
+
+           if( $this->Model_user->get($uid) !== null ) {
+
+              return $this->Model_user->get($uid);
+
+           } else {
+
+               show_404();
+           }
         }
     }
 
