@@ -32,10 +32,9 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
     </head>
 
     <body>
-
         <div class=\"ui small menu\">
             <a href=\"/\" class=\"  ";
-        // line 16
+        // line 15
         if ((((isset($context["title"]) ? $context["title"] : null) == "Главная") || ((isset($context["title"]) ? $context["title"] : null) == "Подтверждение входа"))) {
             echo " active ";
         }
@@ -43,7 +42,7 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
                 <i class=\"big camera retro icon\"></i>
             </a>
             <a href=\"/news\" class=\" ";
-        // line 19
+        // line 18
         if (((isset($context["title"]) ? $context["title"] : null) == "Новости")) {
             echo " active ";
         }
@@ -52,12 +51,12 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
             </a>
             <div class=\"right menu\">
                 ";
-        // line 23
+        // line 22
         if ($this->getAttribute((isset($context["user"]) ? $context["user"] : null), "uid", array(), "any", true, true)) {
-            // line 24
+            // line 23
             echo "                <div class=\"ui dropdown item\">
                     <img class=\"ui avatar image\" src=\"";
-            // line 25
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : null), "photo_50"), "html", null, true);
             echo "\"> ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : null), "first_name"), "html", null, true);
@@ -66,25 +65,28 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
             echo " <i class=\"dropdown icon\"></i>
                     <div class=\"menu\">
                         ";
-            // line 27
+            // line 26
             if ($this->getAttribute((isset($context["user"]) ? $context["user"] : null), "status")) {
-                // line 28
+                // line 27
                 echo "                            <a href=\"/admin\" class=\"item\">Админ панель</a>
                         ";
             }
-            // line 30
+            // line 29
             echo "                        <a href=\"user/out\" class=\"item\">Выйти</a>
                     </div>
                 </div>
                 ";
         } else {
-            // line 34
+            // line 33
             echo "                <div class=\"item\">
-                    <a onclick=\"\$(this).addClass('loading')\" class=\"ui primary button\" style=\"color:white\" href=\"https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://blog.loc/user/vk_auth&response_type=code&v=5.64\">Войти</a>
+                    <a onclick=\"\$(this).addClass('loading')\" class=\"ui vk button\" style=\"color:white\" href=\"https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://blog.loc/user/vk_auth&response_type=code&v=5.64\">
+                        <i class=\"vk icon\"></i>
+                        Войти
+                    </a>
                 </div>
                 ";
         }
-        // line 38
+        // line 40
         echo "            </div>
         </div>";
     }
@@ -101,6 +103,6 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  88 => 38,  82 => 34,  76 => 30,  72 => 28,  70 => 27,  61 => 25,  58 => 24,  56 => 23,  47 => 19,  39 => 16,  25 => 5,  19 => 1,);
+        return array (  90 => 40,  81 => 33,  75 => 29,  71 => 27,  69 => 26,  60 => 24,  57 => 23,  55 => 22,  46 => 18,  38 => 15,  25 => 5,  19 => 1,);
     }
 }

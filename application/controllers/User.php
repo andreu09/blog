@@ -29,7 +29,7 @@ class User extends CI_Controller
             if( isset($vk->access_token) ) {
 
                 // Получаем информацию о пользователе
-                $user = json_decode( file_get_contents("https://api.vk.com/method/users.get?user_ids=$vk->user_id&fields=first_name,last_name,photo_50,photo_100,photo_200&v=5.64") );
+                $user = json_decode( file_get_contents("https://api.vk.com/method/users.get?access_token=$vk->access_token&user_ids=$vk->user_id&fields=first_name,last_name,photo_50,photo_100,photo_200&v=5.64") );
 
                 if( $this->Model_user->vk_auth($user->response[0]) ) {
 

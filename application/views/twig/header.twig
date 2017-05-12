@@ -11,7 +11,6 @@
     </head>
 
     <body>
-
         <div class="ui small menu">
             <a href="/" class="  {% if title == "Главная" or title == "Подтверждение входа"   %} active {% endif %} item">
                 <i class="big camera retro icon"></i>
@@ -32,7 +31,10 @@
                 </div>
                 {% else %}
                 <div class="item">
-                    <a onclick="$(this).addClass('loading')" class="ui primary button" style="color:white" href="https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://blog.loc/user/vk_auth&response_type=code&v=5.64">Войти</a>
+                    <a onclick="$(this).addClass('loading')" class="ui vk button" style="color:white" href="https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://blog.loc/user/vk_auth&response_type=code&v=5.64">
+                        <i class="vk icon"></i>
+                        Войти
+                    </a>
                 </div>
                 {% endif %}
             </div>
