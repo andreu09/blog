@@ -37,7 +37,7 @@ class __TwigTemplate_391034a7fdf881c6f5d39352f303c4b3 extends Twig_Template
         </div>
     </div>
     <div class=\"eleven wide column\">
-        <div class=\"ui bottom attached tab active  segment\" data-tab=\"add-news\">
+        <div class=\"ui bottom attached tab active segment\" data-tab=\"add-news\">
             <div class=\"ui form\">
                 <div class=\"field\">
                     <label>Заголовок</label>
@@ -62,12 +62,42 @@ class __TwigTemplate_391034a7fdf881c6f5d39352f303c4b3 extends Twig_Template
                 </div>
             </div>
         </div>
-        <div class=\"ui attached tab segment\" data-tab=\"users-ban\">
+        <div class=\"ui top attached tab segment\" data-tab=\"users-ban\">
             баны
         </div>
-        <div class=\"ui bottom attached tab segment\" data-tab=\"users-admin\">
-            админы
-        </div>
+        <div class=\"ui top attached tab segment\" data-tab=\"users-admin\">
+            <div class=\"ui three column grid\">
+                ";
+        // line 51
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable(range(0, ($this->getAttribute((isset($context["admin"]) ? $context["admin"] : null), "count") - 1)));
+        foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
+            // line 52
+            echo "                <div class=\"column\">
+                    <div class=\"ui card fluid\">
+                        <div class=\"image\">
+                            <img src=\"";
+            // line 55
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["admin"]) ? $context["admin"] : null), "admin"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "photo_200"), "html", null, true);
+            echo "\">
+                        </div>
+                        <div class=\"content\">
+                            <a class=\"header\">";
+            // line 58
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["admin"]) ? $context["admin"] : null), "admin"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "first_name"), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["admin"]) ? $context["admin"] : null), "admin"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "last_name"), "html", null, true);
+            echo "</a>
+                        </div>
+                    </div>
+                </div>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
+        $context = array_merge($_parent, array_intersect_key($context, $_parent));
+        // line 63
+        echo "        </div>
     </div>
 </div>
 
@@ -112,7 +142,7 @@ class __TwigTemplate_391034a7fdf881c6f5d39352f303c4b3 extends Twig_Template
 </script>
 
 ";
-        // line 95
+        // line 107
         $this->env->loadTemplate("twig/footer.twig")->display($context);
     }
 
@@ -128,6 +158,6 @@ class __TwigTemplate_391034a7fdf881c6f5d39352f303c4b3 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  116 => 95,  21 => 2,  19 => 1,);
+        return array (  146 => 107,  100 => 63,  87 => 58,  81 => 55,  76 => 52,  72 => 51,  21 => 2,  19 => 1,);
     }
 }

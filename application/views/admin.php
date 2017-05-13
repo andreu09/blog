@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="eleven wide column">
-        <div class="ui bottom attached tab active  segment" data-tab="add-news">
+        <div class="ui bottom attached tab active segment" data-tab="add-news">
             <div class="ui form">
                 <div class="field">
                     <label>Заголовок</label>
@@ -43,11 +43,23 @@
                 </div>
             </div>
         </div>
-        <div class="ui attached tab segment" data-tab="users-ban">
+        <div class="ui top attached tab segment" data-tab="users-ban">
             баны
         </div>
-        <div class="ui bottom attached tab segment" data-tab="users-admin">
-            админы
+        <div class="ui top attached tab segment" data-tab="users-admin">
+            <div class="ui three column grid">
+                {% for i in 0..admin.count - 1 %}
+                <div class="column">
+                    <div class="ui card fluid">
+                        <div class="image">
+                            <img src="{{ admin.admin[i].photo_200 }}">
+                        </div>
+                        <div class="content">
+                            <a class="header">{{ admin.admin[i].first_name }} {{ admin.admin[i].last_name }}</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
         </div>
     </div>
 </div>

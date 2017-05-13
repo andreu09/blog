@@ -79,7 +79,7 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
         } else {
             // line 33
             echo "                <div class=\"item\">
-                    <a onclick=\"\$(this).addClass('loading')\" class=\"ui vk button\" style=\"color:white\" href=\"https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://blog.loc/user/vk_auth&response_type=code&v=5.64\">
+                    <a onclick=\"\$(this).addClass('loading')\" class=\"ui vk button\" style=\"color:white\" href=\"https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://shmakov-andrey.ru/user/vk_auth&response_type=code&v=5.64\">
                         <i class=\"vk icon\"></i>
                         Войти
                     </a>

@@ -9,6 +9,7 @@ class Admin extends CI_Controller
         $this->load->library('session');
         $this->load->helper('url');
         $this->load->model('Model_user');
+        $this->load->model('Model_admin');
         $this->load->database();
     }
 
@@ -18,7 +19,7 @@ class Admin extends CI_Controller
 
             if( $this->Model_user->get($this->session->user["uid"])->status ) {
 
-                echo $this->twig->render("admin.php", array("user" => $this->session->user, "title" => "Админ панель"));
+                echo $this->twig->render("admin.php", array("admin" => $this->Model_admin->get_admin(), "user" => $this->session->user, "title" => "Админ панель"));
 
             } else {
 
@@ -29,4 +30,11 @@ class Admin extends CI_Controller
             show_404();
         }
     }
+
+    public function test()
+    {
+        var_dump($this->Model_admin->get_admin());
+    }
 }
+
+

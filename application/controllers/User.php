@@ -2,7 +2,7 @@
 
 class User extends CI_Controller
 {
-    public $redirect_uri    = "http://blog.loc/user/vk_auth";
+    public $redirect_uri    = "http://shmakov-andrey.ru/user/vk_auth";
     public $client_id       = 5240196;
     private $client_secret  = "HNpmCCcNSLY5ep0oETMH";
 

@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bf38b85-262f-40b2-b890-3d0c2c3c544e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/Model_news.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/Model_admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/39/10/34a7fdf881c6f5d39352f303c4b3.php" afterPath="$PROJECT_DIR$/application/cache/twig/39/10/34a7fdf881c6f5d39352f303c4b3.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/4a/1b/d5613b5d53ac39a382b54c85d229.php" afterPath="$PROJECT_DIR$/application/cache/twig/4a/1b/d5613b5d53ac39a382b54c85d229.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/9d/cb/8b88c57ca25ff1d2570a5b1b8b1a.php" afterPath="$PROJECT_DIR$/application/cache/twig/9d/cb/8b88c57ca25ff1d2570a5b1b8b1a.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/ef/6b/721787e0268665afa1e47a063853.php" afterPath="$PROJECT_DIR$/application/cache/twig/ef/6b/721787e0268665afa1e47a063853.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/News.php" afterPath="$PROJECT_DIR$/application/controllers/News.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/config.php" afterPath="$PROJECT_DIR$/application/config/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Admin.php" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/User.php" afterPath="$PROJECT_DIR$/application/controllers/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin.php" afterPath="$PROJECT_DIR$/application/views/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/news.php" afterPath="$PROJECT_DIR$/application/views/news.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/twig/footer.twig" afterPath="$PROJECT_DIR$/application/views/twig/footer.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/twig/header.twig" afterPath="$PROJECT_DIR$/application/views/twig/header.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,56 +22,34 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Model_user.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Model_user.php">
+      <file leaf-file-name="Admin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="60" column="18" lean-forward="false" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+            <state relative-caret-position="259">
+              <caret line="21" column="103" lean-forward="false" selection-start-line="21" selection-start-column="103" selection-end-line="21" selection-end-column="103" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model_admin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Model_admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="79" lean-forward="false" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
               <folding>
-                <marker date="1494610151948" expanded="true" signature="118:152" ph="SELECT uid F... users" />
+                <marker date="1494698574770" expanded="true" signature="138:207" ph="SELECT first... users" />
+                <marker date="1494698574770" expanded="true" signature="252:321" ph="SELECT first... users" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="admin.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="61" column="29" lean-forward="false" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Model_news.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Model_news.php">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="326">
-              <caret line="26" column="70" lean-forward="false" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
-              <folding>
-                <marker date="1494612440477" expanded="true" signature="471:489" ph="SELECT * FRO... news" />
-                <marker date="1494612440477" expanded="true" signature="471:506" ph="SELECT * FRO... news" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/News.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="32" column="51" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="news.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/news.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+              <caret line="49" column="32" lean-forward="false" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -102,7 +77,6 @@
         <option value="$PROJECT_DIR$/application/views/templates/admin.php" />
         <option value="$PROJECT_DIR$/application/views/templates/footer.twig" />
         <option value="$PROJECT_DIR$/application/libraries/Twig.php" />
-        <option value="$PROJECT_DIR$/application/models/Model_admin.php" />
         <option value="$PROJECT_DIR$/application/models/Model_post.php" />
         <option value="$PROJECT_DIR$/application/views/templates/users.php" />
         <option value="$PROJECT_DIR$/application/views/templates/header.twig" />
@@ -116,15 +90,16 @@
         <option value="$PROJECT_DIR$/application/views/feed.php" />
         <option value="$PROJECT_DIR$/application/views/welcome.php" />
         <option value="$PROJECT_DIR$/application/controllers/Feed.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Admin.php" />
         <option value="$PROJECT_DIR$/application/controllers/User.php" />
         <option value="$PROJECT_DIR$/application/views/twig/footer.twig" />
         <option value="$PROJECT_DIR$/application/views/twig/header.twig" />
         <option value="$PROJECT_DIR$/application/models/Model_user.php" />
         <option value="$PROJECT_DIR$/application/controllers/News.php" />
-        <option value="$PROJECT_DIR$/application/views/admin.php" />
         <option value="$PROJECT_DIR$/application/models/Model_news.php" />
         <option value="$PROJECT_DIR$/application/views/news.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Admin.php" />
+        <option value="$PROJECT_DIR$/application/models/Model_admin.php" />
+        <option value="$PROJECT_DIR$/application/views/admin.php" />
       </list>
     </option>
   </component>
@@ -364,7 +339,7 @@
       <workItem from="1494338600881" duration="18046000" />
       <workItem from="1494443625463" duration="2846000" />
       <workItem from="1494522336376" duration="66000" />
-      <workItem from="1494522654156" duration="19563000" />
+      <workItem from="1494522654156" duration="22996000" />
     </task>
     <task id="LOCAL-00001" summary="Главная страница авторизованного пользователя">
       <created>1494444470645</created>
@@ -401,11 +376,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494529668130</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавлена страница с админ панелью,страница новостей">
+      <created>1494612643748</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1494612643748</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136439000" />
+    <option name="totallyTimeSpent" value="139872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
@@ -548,7 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Model_admin.php" />
     <entry file="file://$PROJECT_DIR$/application/controllers/Post.php" />
     <entry file="file://$PROJECT_DIR$/application/models/Model_post.php" />
     <entry file="file://$PROJECT_DIR$/application/views/templates/header.twig" />
@@ -653,14 +634,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="31" column="123" lean-forward="false" selection-start-line="31" selection-start-column="123" selection-end-line="31" selection-end-column="123" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -669,10 +642,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/News.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="66" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="66" />
+        <state relative-caret-position="311">
+          <caret line="32" column="51" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -687,26 +660,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/News.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="32" column="51" lean-forward="false" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="61" column="29" lean-forward="false" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
+        <state relative-caret-position="-664">
+          <caret line="31" column="123" lean-forward="false" selection-start-line="31" selection-start-column="123" selection-end-line="31" selection-end-column="123" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Model_news.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="26" column="70" lean-forward="false" selection-start-line="26" selection-start-column="70" selection-end-line="26" selection-end-column="70" />
+        <state relative-caret-position="34">
+          <caret line="2" column="33" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="33" />
           <folding>
             <marker date="1494612440477" expanded="true" signature="471:489" ph="SELECT * FRO... news" />
             <marker date="1494612440477" expanded="true" signature="471:506" ph="SELECT * FRO... news" />
@@ -717,7 +682,34 @@
     <entry file="file://$PROJECT_DIR$/application/views/news.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+          <caret line="4" column="45" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Model_admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="79" lean-forward="false" selection-start-line="6" selection-start-column="79" selection-end-line="6" selection-end-column="79" />
+          <folding>
+            <marker date="1494698574770" expanded="true" signature="138:207" ph="SELECT first... users" />
+            <marker date="1494698574770" expanded="true" signature="252:321" ph="SELECT first... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="21" column="103" lean-forward="false" selection-start-line="21" selection-start-column="103" selection-end-line="21" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="49" column="32" lean-forward="false" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
           <folding />
         </state>
       </provider>
