@@ -24,10 +24,10 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
         // line 5
         echo twig_escape_filter($this->env, (isset($context["title"]) ? $context["title"] : null), "html", null, true);
         echo "</title>
-        <link rel=\"stylesheet\" href=\"assets/semantic.min.css\">
-        <script src=\"assets/js/jquery-3.2.1.min.js\"></script>
-        <script src=\"assets/js/semantic.min.js\"></script>
-        <script src=\"assets/components/dropdown.min.js\"></script>
+        <link rel=\"stylesheet\" href=\"http://shmakov-andrey.ru/assets/semantic.min.css\">
+        <script src=\"http://shmakov-andrey.ru/assets/js/jquery-3.2.1.min.js\"></script>
+        <script src=\"http://shmakov-andrey.ru/assets/js/semantic.min.js\"></script>
+        <script src=\"http://shmakov-andrey.ru/assets/components/dropdown.min.js\"></script>
 
     </head>
 

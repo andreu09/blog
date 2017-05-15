@@ -6,8 +6,6 @@ class Feed extends CI_Controller
     {
         parent::__construct();
         $this->load->library("twig");
-        $this->load->library('session');
-        $this->load->helper('url');
     }
 
     public function index()

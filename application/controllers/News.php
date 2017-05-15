@@ -7,8 +7,6 @@ class News extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library("twig");
-        $this->load->library('session');
         $this->load->model("Model_news");
         $this->load->model("Model_user");
         $this->load->database();
@@ -16,7 +14,21 @@ class News extends CI_Controller
 
     public function index()
     {
-        echo $this->twig->render("news.php", array("user" => $this->session->user, "title" => "Новости", "news" => $this->get() ));
+
+        $config['base_url'] = base_url() . "/news/";
+        $config['uri_segment'] = 2;
+        $config['per_page'] = 3;
+        $config["full_tag_open"] = '<div class="ui borderless menu">';
+        $config["first_tag_close"] = '</p>';
+        $config["last_link"] = false;
+        $config["cur_tag_open"] = '<a class="active item">';
+        $config["cur_tag_close"] = '</a>';
+        $config['attributes'] = array('class' => 'item');
+        $config['total_rows'] = $this->Model_news->get()["news"]["count"];
+
+        $this->pagination->initialize($config);
+        echo $this->twig->render("news.php", array("user" => $this->session->user, "title" => "Новости", "news" => $this->Model_news->get($this->uri->segment(2)) ));
+        echo $this->pagination->create_links();
     }
 
     /*
@@ -50,14 +62,5 @@ class News extends CI_Controller
        }
     }
 
-    /*
-     * Получение новостей
-     * p - количество записей, если не указан то все
-    */
-
-    public function get()
-    {
-       return  $this->Model_news->get();
-    }
 
 }
