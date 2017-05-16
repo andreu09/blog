@@ -3,7 +3,6 @@
 <div class="ui two column centered grid stackable">
     <div class="eight wide column">
         {% for i in 0..news.news.current_count - 1 %}
-        {{ news.news.current_count }}
         <div class="ui card fluid">
             <div class="content">
                 <div class="header">{{ news.news[i].title }}</div>

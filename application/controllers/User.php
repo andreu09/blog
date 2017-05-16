@@ -12,8 +12,6 @@ class User extends CI_Controller
 
         $this->load->database();
         $this->load->model('Model_user');
-        $this->load->library('session');
-        $this->load->helper('url');
     }
 
     /*
@@ -31,7 +29,7 @@ class User extends CI_Controller
                 // Получаем информацию о пользователе
                 $user = json_decode( file_get_contents("https://api.vk.com/method/users.get?access_token=$vk->access_token&user_ids=$vk->user_id&fields=first_name,last_name,photo_50,photo_100,photo_200&v=5.64") );
 
-                if( $this->Model_user->vk_auth($user->response[0]) ) {
+                if( $this->Model_user->vk_auth($user->response[0]) === true ) {
 
                     // Добавляем статус пользователя
                     $user->response[0]->status = $this->Model_user->get($user->response[0]->uid)->status;
@@ -40,11 +38,13 @@ class User extends CI_Controller
                     // Редирект на главную
                     redirect( base_url() );
 
-                } else {
+                } elseif( $this->Model_user->vk_auth($user->response[0]) === null) {
 
                     // Ошибка базы
                     echo "Ошибка базы данных.";
+
                 }
+
 
             } else {
 

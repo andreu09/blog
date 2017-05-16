@@ -19,7 +19,7 @@ class Admin extends CI_Controller
 
             if( $this->Model_user->get($this->session->user["uid"])->status ) {
 
-                echo $this->twig->render("admin.php", array("admin" => $this->Model_admin->get_admin(), "user" => $this->session->user, "title" => "Админ панель"));
+                echo $this->twig->render("admin.php", array("admins" => $this->Model_admin->get(), "user" => $this->session->user, "title" => "Админ панель"));
 
             } else {
 
@@ -31,10 +31,22 @@ class Admin extends CI_Controller
         }
     }
 
-    public function test()
-    {
-        var_dump($this->Model_admin->get_admin());
-    }
+    public function action($action,$uid)
+   {
+        if( isset($this->session->user["uid"]) && $this->Model_user->get($this->session->user["uid"])->status ) {
+
+            switch ($action) {
+
+                case "delete" : $this->Model_admin->delete($uid);
+                    break;
+            }
+
+        } else {
+
+            show_404();
+
+        }
+   }
 }
 
 

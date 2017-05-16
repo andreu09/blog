@@ -3,7 +3,15 @@
 class Model_news extends CI_Model
 {
 
-    public function add($title,$text,$type)
+    /**
+     * Добавление новостей
+     * @param $title
+     * @param $text
+     * @param $type
+     * @return bool|null
+     */
+
+    public function add($title, $text, $type)
     {
         $insert = $this->db->insert('news', array(
             "uid"   => $this->session->user["uid"],
@@ -22,6 +30,12 @@ class Model_news extends CI_Model
        }
     }
 
+    /**
+     * Получение новостей
+     * @param string $total
+     * @return array
+     */
+
     public function get($total = "")
     {
 
@@ -31,14 +45,14 @@ class Model_news extends CI_Model
         $news["current_count"] = count($news);
         // Всего записей
         $news["count"] = $this->db->count_all("news");
-       /* $user = [];
-        for($i = 0; $i <= $this->db->count_all("news") - 1; $i++) {
+        // Массив с данымми о пользователях, которые публиковали новости
+        $user = [];
+        for($i = 0; $i <=  $news["current_count"] - 1; $i++) {
 
             $user[] = $this->Model_user->get($news[$i]->uid);
+        }
 
-        }*/
-        return array( "news" => $news ); //"user" => (array) $user
-
+        return array( "news" => $news, "user" => (array) $user );
     }
 
 

@@ -4,7 +4,7 @@ class Model_user extends CI_Model
 {
     public function vk_auth( $user ) {
 
-        $query = $this->db->query("SELECT uid FROM users WHERE uid = $user->id")->row();
+        $query = $this->db->query("SELECT uid,block FROM users WHERE uid = $user->id")->row();
         $user->uid = $user->id;
 
         if($query !== null) {
@@ -16,16 +16,16 @@ class Model_user extends CI_Model
             // Обновляем его данные
             $update = $this->db->update('users', $user);
 
-            if($update) {
+            if($query->block) {
 
-                // Обновились данные
-                return true;
-
+                // Блокирован юзер
+                return null;
             } else {
 
-                // Не обновилисьс данные
-                return null;
+                return true;
             }
+
+
 
         } else {
 

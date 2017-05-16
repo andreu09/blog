@@ -11,7 +11,7 @@
                 <i class="dropdown icon"></i>
                 <div class="menu">
                     <a class="item" data-tab="users-ban">  <i class="large ban icon"></i> Заблокированные</a>
-                    <a class="item" data-tab="users-admin">  <i class="large check circle icon"></i> Администраторы</a>
+                    <a class="item" onclick="$('#admin-users').modal('show');">  <i class="large check circle icon"></i> Администраторы</a>
 
                 </div>
             </div>
@@ -46,26 +46,48 @@
         <div class="ui top attached tab segment" data-tab="users-ban">
             баны
         </div>
-        <div class="ui top attached tab segment" data-tab="users-admin">
-            <div class="ui three column grid">
-                {% for i in 0..admin.count - 1 %}
-                <div class="column">
-                    <div class="ui card fluid">
-                        <div class="image">
-                            <img src="{{ admin.admin[i].photo_200 }}">
+
+        <div class="ui fullscreen modal" id="admin-users">
+            <i class="close icon"></i>
+            <div class="header">
+                Администраторы:
+            </div>
+            <div class="content">
+                <div class="ui four column grid">
+                    <div class="row">
+                        {% for i in 0..admins.count - 1 %}
+                        <div class="column">
+                            <div class="ui fluid  card">
+                                <div class="image">
+                                    <img src="{{ admins.user[i].photo_200 }}">
+                                </div>
+                                <div class="content">
+                                    <a class="header">{{ admins.user[i].first_name }} {{ admins.user[i].last_name }}</a>
+                                </div>
+                                <div class="extra content">
+                                    <div class="ui two buttons">
+                                        <a target="_blank" href="/admin/action/delete/{{  admins.user[i].uid }}">
+                                            <div class="ui basic yellow button">
+                                                Снять с должности
+                                            </div>
+                                        </a>>
+                                        <div class="ui basic red button">Заблокировать доступ</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="content">
-                            <a class="header">{{ admin.admin[i].first_name }} {{ admin.admin[i].last_name }}</a>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
-                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
 
 <script>
+
     $(document).ready(function () {
+
         $("#news-submit").click(function () {
             var title = $("#news-title").val();
             var text = $("#news-text").val();
