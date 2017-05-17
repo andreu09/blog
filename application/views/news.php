@@ -12,13 +12,13 @@
                 </div>
                 <div class="description">
                     <p>
-                       {{ news.news[0].text }}
+                       {{ news.news[i].text }}
                     </p>
                 </div>
             </div>
             <div class="extra content">
                 <div class="right floated author">
-                    <img class="ui avatar image" src="{{ news.user[i].photo_50 }}"> {{ news.user[i].first_name }} {{ news.user[i].last_name }}
+                    <img class="ui avatar image" src="{{  news.user[i][0].photo_50 }}"> {{ news.user[i][0].first_name }} {{  news.user[i][0].last_name }}
                 </div>
             </div>
         </div>

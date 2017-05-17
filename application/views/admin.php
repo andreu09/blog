@@ -10,7 +10,7 @@
                 Пользователи
                 <i class="dropdown icon"></i>
                 <div class="menu">
-                    <a class="item" data-tab="users-ban">  <i class="large ban icon"></i> Заблокированные</a>
+                    <a class="item" onclick="$('#block-users').modal('show');">  <i class="large ban icon"></i> Заблокированные</a>
                     <a class="item" onclick="$('#admin-users').modal('show');">  <i class="large check circle icon"></i> Администраторы</a>
 
                 </div>
@@ -43,10 +43,8 @@
                 </div>
             </div>
         </div>
-        <div class="ui top attached tab segment" data-tab="users-ban">
-            баны
-        </div>
 
+        <!-- Администраторы -->
         <div class="ui fullscreen modal" id="admin-users">
             <i class="close icon"></i>
             <div class="header">
@@ -70,8 +68,12 @@
                                             <div class="ui basic yellow button">
                                                 Снять с должности
                                             </div>
-                                        </a>>
-                                        <div class="ui basic red button">Заблокировать доступ</div>
+                                        </a>
+                                        <a target="_blank" href="/admin/action/block[action=add]/{{  admins.user[i].uid }}">
+                                            <div class="ui basic red button">
+                                                Заблокировать доступ
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -81,6 +83,50 @@
                 </div>
             </div>
         </div>
+
+        <!-- Заблокированные -->
+        <div class="ui fullscreen modal" id="block-users">
+            <i class="close icon"></i>
+            <div class="header">
+                Заблокированные:
+            </div>
+            <div class="content">
+                <div class="ui four column grid">
+                    <div class="row">
+                        {% if block_users.count == 0 %}
+
+                        Заблокированных пользователей не найдно.
+
+                        {% else %}
+
+                        {% for i in 0..block_users.count - 1 %}
+                        <div class="column">
+                            <div class="ui fluid  card">
+                                <div class="image">
+
+                                    <img src="{{ block_users[i].photo_200 }}">
+                                </div>
+                                <div class="content">
+                                    <a class="header">{{ block_users[i].first_name }} {{ block_users[i].last_name }}</a>
+                                </div>
+                                <div class="extra content">
+                                    <a target="_blank" href="/admin/action/block[action=delete]/{{ block_users[i].uid }}">
+                                        <div class="fluid ui button basic green button">
+                                            Снять блокировку
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 

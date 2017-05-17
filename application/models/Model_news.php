@@ -40,7 +40,11 @@ class Model_news extends CI_Model
     {
 
         // Получаем 3 записи
+        $this->db->order_by("id", "DESC");
         $news = $this->db->get("news",3,$total)->result();
+        //var_dump($total);
+       // $news = $this->db->query("SELECT * FROM news ORDER BY id DESC LIMIT 3,$total ")->result();
+
         // Сколько получили
         $news["current_count"] = count($news);
         // Всего записей
@@ -49,7 +53,7 @@ class Model_news extends CI_Model
         $user = [];
         for($i = 0; $i <=  $news["current_count"] - 1; $i++) {
 
-            $user[] = $this->Model_user->get($news[$i]->uid);
+            $user[] = $this->Model_user->get("user",$news[$i]->uid);
         }
 
         return array( "news" => $news, "user" => (array) $user );

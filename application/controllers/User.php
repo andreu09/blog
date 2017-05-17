@@ -29,20 +29,24 @@ class User extends CI_Controller
                 // Получаем информацию о пользователе
                 $user = json_decode( file_get_contents("https://api.vk.com/method/users.get?access_token=$vk->access_token&user_ids=$vk->user_id&fields=first_name,last_name,photo_50,photo_100,photo_200&v=5.64") );
 
-                if( $this->Model_user->vk_auth($user->response[0]) === true ) {
+                switch ($this->Model_user->vk_auth($user->response[0])) {
 
-                    // Добавляем статус пользователя
-                    $user->response[0]->status = $this->Model_user->get($user->response[0]->uid)->status;
-                    // Все вместе заносим в сессию
-                    $this->session->set_userdata( array("user" => (array) $user->response[0] ) );
-                    // Редирект на главную
-                    redirect( base_url() );
+                    case true :
+                        // Добавляем статус пользователя
+                        $user->response[0]->status = $this->Model_user->get("user",$user->response[0]->uid)[0]["status"];
+                        // Все вместе заносим в сессию
+                        $this->session->set_userdata( array("user" => (array) $user->response[0] ) );
+                        // Редирект на главную
+                        redirect( base_url() );
+                            break;
 
-                } elseif( $this->Model_user->vk_auth($user->response[0]) === null) {
+                    case false :
+                        echo "Уважаемый {$user->response[0]->first_name}, ваш аккаунт заблокирован! ";
+                            break;
 
-                    // Ошибка базы
-                    echo "Ошибка базы данных.";
-
+                    case null :
+                        echo "Произогла ошибка в базе данных... Повторите позднее...";
+                            break;
                 }
 
 
@@ -78,26 +82,25 @@ class User extends CI_Controller
         }
     }
 
-    /*
-     * Получение информации о пользователе зная его uid
-    */
+    /**
+     * Получение информации
+     * @param $action
+     * @param string $uid
+     * @return mixed
+     */
 
-    public function get($uid = "")
+    public function get($action, $uid = "")
     {
-        if($uid === "") {
 
-            echo "Неизвестный uid";
+        switch ($action) {
 
-        } else {
+            case "action[user]" :
+                return $this->Model_user->get("user",$uid);
+                    break;
 
-           if( $this->Model_user->get($uid) !== null ) {
-
-              return $this->Model_user->get($uid);
-
-           } else {
-
-               show_404();
-           }
+            case "action[block]" :
+               return $this->Model_user->get("block",$uid);
+                    break;
         }
     }
 

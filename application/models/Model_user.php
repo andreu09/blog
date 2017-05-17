@@ -2,7 +2,13 @@
 
 class Model_user extends CI_Model
 {
-    public function vk_auth( $user ) {
+    /**
+     * Авторизация ВК
+     * @param $user
+     * @return bool|null
+     */
+
+    public function vk_auth($user ) {
 
         $query = $this->db->query("SELECT uid,block FROM users WHERE uid = $user->id")->row();
         $user->uid = $user->id;
@@ -16,22 +22,31 @@ class Model_user extends CI_Model
             // Обновляем его данные
             $update = $this->db->update('users', $user);
 
-            if($query->block) {
+            // Проверяем прошел ли процесс обновления данных пользователя
+            if($update) {
 
-                // Блокирован юзер
-                return null;
+                // Проверка на блокировку пользователя
+                if($query->block) {
+
+                    // Пользователь блокирован
+                    return false;
+
+                } else {
+
+                    // Не блокирован
+                    return true;
+                }
+
             } else {
 
-                return true;
+                // Ошибка добавления
+                return null;
             }
-
-
-
+        // Новый пользователь
         } else {
 
             // Удаляем id ибо оно все равно не меняется
             unset($user->id);
-            // Новый пользователь
             $insert = $this->db->insert('users', $user);
 
             if($insert) {
@@ -47,18 +62,40 @@ class Model_user extends CI_Model
         }
     }
 
-    public function get($uid)
-    {
-        $query = $this->db->get_where('users', array('uid' => $uid))->row();
+    /**
+     * Получение информации о пользователе через uid
+     * @param $uid
+     * @return null
+     */
 
-        // Если такого uid не существует тогда возвратим null
+    public function get($action,$uid = "")
+    {
+        $where = [];
+
+        switch ($action) {
+
+            case "user" :
+                $where = array( "uid" => $uid );
+                    break;
+
+            case "block" :
+                $where = array("block" => 1 );
+                    break;
+        }
+
+        $query = $this->db->get_where('users', $where )->result_array();
+        $query["count"] = count($query);
+
         if($query !== null) {
 
+            // Массив с данными пользователя
             return $query;
 
         } else {
 
+            // Пользователь не найден
             return null;
         }
     }
+
 }

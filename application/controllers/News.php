@@ -18,7 +18,7 @@ class News extends CI_Controller
         $config['base_url'] = base_url() . "/news/";
         $config['uri_segment'] = 2;
         $config['per_page'] = 3;
-        $config["full_tag_open"] = '<div class="ui borderless menu two column centered grid">';
+        $config["full_tag_open"] = '<div class="ui two column centered grid stackable"> <div class="eight wide column"> <div class="ui borderless menu ">';
         $config["first_tag_close"] = '</p>';
         $config["last_link"] = false;
         $config["cur_tag_open"] = '<a class="active item">';
