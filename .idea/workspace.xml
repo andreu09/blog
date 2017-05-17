@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7bf38b85-262f-40b2-b890-3d0c2c3c544e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/39/10/34a7fdf881c6f5d39352f303c4b3.php" afterPath="$PROJECT_DIR$/application/cache/twig/39/10/34a7fdf881c6f5d39352f303c4b3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/4a/1b/d5613b5d53ac39a382b54c85d229.php" afterPath="$PROJECT_DIR$/application/cache/twig/4a/1b/d5613b5d53ac39a382b54c85d229.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/ef/6b/721787e0268665afa1e47a063853.php" afterPath="$PROJECT_DIR$/application/cache/twig/ef/6b/721787e0268665afa1e47a063853.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/config.php" afterPath="$PROJECT_DIR$/application/config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Admin.php" afterPath="$PROJECT_DIR$/application/controllers/Admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/News.php" afterPath="$PROJECT_DIR$/application/controllers/News.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/User.php" afterPath="$PROJECT_DIR$/application/controllers/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_admin.php" afterPath="$PROJECT_DIR$/application/models/Model_admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_news.php" afterPath="$PROJECT_DIR$/application/models/Model_news.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_user.php" afterPath="$PROJECT_DIR$/application/models/Model_user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/admin.php" afterPath="$PROJECT_DIR$/application/views/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/news.php" afterPath="$PROJECT_DIR$/application/views/news.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/twig/header.twig" afterPath="$PROJECT_DIR$/application/views/twig/header.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -405,7 +392,7 @@
       <workItem from="1494443625463" duration="2846000" />
       <workItem from="1494522336376" duration="66000" />
       <workItem from="1494522654156" duration="40591000" />
-      <workItem from="1495037562391" duration="7924000" />
+      <workItem from="1495037562391" duration="7944000" />
     </task>
     <task id="LOCAL-00001" summary="Главная страница авторизованного пользователя">
       <created>1494444470645</created>
@@ -470,11 +457,18 @@
       <option name="project" value="LOCAL" />
       <updated>1494958673087</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Добавлена страница с админ панелью,страница новостей">
+      <created>1495046164700</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1495046164700</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165391000" />
+    <option name="totallyTimeSpent" value="165411000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
