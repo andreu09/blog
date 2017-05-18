@@ -70,18 +70,25 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
                     <div class=\"menu\">
                         ";
             // line 30
-            if ($this->getAttribute((isset($context["user"]) ? $context["user"] : null), "status")) {
+            if (((isset($context["title"]) ? $context["title"] : null) == "Главная")) {
                 // line 31
-                echo "                            <a href=\"/admin\" class=\"item\">Админ панель</a>
+                echo "                            <a class=\"item\" onclick=\"\$('#modal-post').modal('show');\">Создать запись</a>
                         ";
             }
             // line 33
+            echo "                        ";
+            if ($this->getAttribute((isset($context["user"]) ? $context["user"] : null), "status")) {
+                // line 34
+                echo "                            <a href=\"/admin\" class=\"item\">Админ панель</a>
+                        ";
+            }
+            // line 36
             echo "                        <a href=\"user/out\" class=\"item\">Выйти</a>
                     </div>
                 </div>
                 ";
         } else {
-            // line 37
+            // line 40
             echo "                <div class=\"item\">
                     <a onclick=\"\$(this).addClass('loading')\" class=\"ui vk button\" style=\"color:white\" href=\"https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://shmakov-andrey.ru/user/vk_auth&response_type=code&v=5.64\">
                         <i class=\"vk icon\"></i>
@@ -90,9 +97,19 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
                 </div>
                 ";
         }
-        // line 44
+        // line 47
         echo "            </div>
-        </div>";
+        </div>
+
+    ";
+        // line 50
+        if (((isset($context["title"]) ? $context["title"] : null) == "Главная")) {
+            // line 51
+            echo "        ";
+            $this->env->loadTemplate("twig/modal_post.twig")->display($context);
+            // line 52
+            echo "    ";
+        }
     }
 
     public function getTemplateName()
@@ -107,6 +124,6 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  94 => 44,  85 => 37,  79 => 33,  75 => 31,  73 => 30,  64 => 28,  61 => 27,  59 => 26,  50 => 22,  42 => 19,  25 => 5,  19 => 1,);
+        return array (  111 => 52,  108 => 51,  106 => 50,  101 => 47,  92 => 40,  86 => 36,  82 => 34,  79 => 33,  75 => 31,  73 => 30,  64 => 28,  61 => 27,  59 => 26,  50 => 22,  42 => 19,  25 => 5,  19 => 1,);
     }
 }

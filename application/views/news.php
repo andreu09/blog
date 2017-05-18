@@ -12,7 +12,7 @@
                 </div>
                 <div class="description">
                     <p>
-                       {{ news.news[i].text }}
+                       {{ news.news[i].text|nl2br }}
                     </p>
                 </div>
             </div>

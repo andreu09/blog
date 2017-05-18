@@ -47,7 +47,7 @@ class __TwigTemplate_ef6b721787e0268665afa1e47a063853 extends Twig_Template
                     <p>
                        ";
             // line 15
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "news"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "text"), "html", null, true);
+            echo nl2br(twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "news"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "text"), "html", null, true));
             echo "
                     </p>
                 </div>
