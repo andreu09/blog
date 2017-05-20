@@ -1,4 +1,4 @@
-<div class="ui modal" id="modal-post">
+<div class="ui fullscreen modal" id="modal-post">
     <i class="close icon"></i>
     <div class="header">
         Создание публикации
@@ -7,19 +7,22 @@
         <div class="ui medium image centered">
             <input class="ui button" type="file" accept="image/jpeg,image/png,image/gif" id="post_image-input">
             <img class="ui medium rounded image" src="" style = "display: none" id="post-image">
-        </div>
-        <div class="ui dropdown">
-            <div class="text">File</div>
-            <i class="dropdown icon"></i>
-            <div class="menu">
-                <div class="item">
-                    <img src="assets/images/smiles/1.png">
+            <div class="ui fluid selection dropdown" style="margin-top: 20px;display: none" id="smile-div">
+                <input type="hidden" name="user">
+                <i class="dropdown icon"></i>
+                <div class="default text">Выбирйте настроение</div>
+                <div class="menu">
+                    {% for i in 1..10 %}
+                    <div class="item" data-value="{{ i }}">
+                        <img class="ui mini avatar image" src="http://shmakov-andrey.ru/assets/images/smiles/{{ i }}.png">
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
     <div class="actions">
-        <div class="ui green deny button" id="submit-post">
+        <div class="ui green button" id="submit-post">
             Опубликовать
         </div>
     </div>
@@ -28,7 +31,10 @@
 <script>
     $(document).ready(function ()
     {
+        // Все данные о посте
+        var post = {};
 
+        // Считывание изображения
         function readURL(input)
         {
 
@@ -38,17 +44,63 @@
                 reader.onload = function (e) {
 
                     $('#post_image-input').css("display","none");
+                    $('#smile-div').css("display","block");
                     $('#post-image').attr('src', e.target.result).css("display","block");
+
+                    post.image = e.target.result;
                 };
 
                 reader.readAsDataURL(input.files[0]);
             }
         }
 
+        // Выбор настроения
+        $('#smile-div')
+            .dropdown({
+                onChange: function(value, text, $selectedItem) {
+
+                   post.smile = value;
+                }
+            })
+        ;
+
+        // Отправка
         $("#submit-post").click(function () {
+
+            if(post.image === undefined) {
+
+                alert("Не выбрано изображение!")
+
+            } else if (post.smile !== undefined) {
+
+                $.ajax({
+
+                    url: "/post/action/add",
+                    data: { smile : post.smile, image : post.image },
+                    type: "POST",
+                    dataType : "text",
+                    success : function (post) {
+
+                        if(post) {
+
+                            window.location.href = "/feed";
+
+                        } else {
+
+                            alert("Произошла ошибка, попробуйте позднее...")
+                        }
+                    }
+                })
+
+            } else {
+
+                alert("Настроение не выбрано!")
+
+            }
 
         });
 
+        // Вывод изображения
         $('#post_image-input').change(function () {
 
             readURL(this);

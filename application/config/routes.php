@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // Для пагинации новостей
 $route['news/:num'] = 'news/index';
+$route['feed/:num'] = 'feed/index';
 $route['default_controller'] = 'Feed';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
