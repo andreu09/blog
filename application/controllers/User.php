@@ -9,14 +9,61 @@ class User extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
         $this->load->database();
         $this->load->model('Model_user');
     }
 
-    /*
-     * Авторизация пользователя с помощью вк
-    */
+    /**
+     * Настройка профиля пользователя
+     * @param string $uid
+     */
+
+    public function setting($uid = "")
+    {
+        if($uid !== "")
+        {
+            if( $this->session->user["uid"] === (int) $uid ) {
+
+                // Страница настройки пользователя
+
+            } else {
+
+                show_404();
+            }
+
+        } else {
+
+            show_404();
+        }
+    }
+
+    /**
+     * Страница просмотра профиля пользователя
+     * @param string $uid
+     */
+
+    public function id($uid = "")
+    {
+        if($uid !== "") {
+
+            if( $this->Model_user->get("user",$uid)["count"] ) {
+
+                // Выводим страницу для отображения информации о пользователе
+
+            } else {
+
+                show_404();
+            }
+
+        } else {
+
+            show_404();
+        }
+    }
+
+    /**
+     * Авторизация при помощи Вконтакте
+     */
 
     public function vk_auth()
     {
@@ -49,7 +96,6 @@ class User extends CI_Controller
                             break;
                 }
 
-
             } else {
 
                 // Какая то ошибка, не пришел токен
@@ -63,9 +109,9 @@ class User extends CI_Controller
         }
     }
 
-    /*
+    /**
      * Выход из личного кабинета
-    */
+     */
 
     public function out()
     {
@@ -83,7 +129,7 @@ class User extends CI_Controller
     }
 
     /**
-     * Получение информации
+     * Получение информации о пользователе
      * @param $action
      * @param string $uid
      * @return mixed

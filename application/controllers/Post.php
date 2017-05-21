@@ -14,10 +14,10 @@ class Post extends CI_Controller
     /**
      * Действия с постами
      * @param $action
-     * @param string $uid
+     * @internal param string $uid
      */
 
-    public function action($action,$uid = "")
+    public function action($action)
     {
         switch ($action) {
 
@@ -25,5 +25,10 @@ class Post extends CI_Controller
                 $this->Model_post->add();
                     break;
         }
+    }
+
+    public function like()
+    {
+        $this->Model_post->like( $this->input->post("post_id") , $this->session->user["uid"] );
     }
 }

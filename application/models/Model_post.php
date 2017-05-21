@@ -66,4 +66,37 @@ class Model_post extends CI_Model
     {
 
     }
+
+    public function like($post_id)
+    {
+        $uid_likes = explode(",", $this->db->query("SELECT uid_likes FROM posts")->row()->uid_likes );
+
+        if( in_array($this->session->user["uid"],$uid_likes) )
+        {
+            // Лайк уже есть
+            for($i = 0; $i <= count($uid_likes) - 1; $i++ )
+            {
+                if( (int) $uid_likes[$i] === $this->session->user["uid"] )
+                {
+                    // Удаляем элемент пользователя из лайкнувших
+                    unset($uid_likes[$i]);
+                }
+            }
+
+           $delete_like = $this->db->query("  UPDATE posts SET likes = likes - 1");
+           $delete_uid_likes = $this->db->update("posts", ["uid_likes" => implode(",",$uid_likes)] );
+            // Добавить проверку
+
+        } else {
+
+            // Новый лайк
+            $uid_likes = explode(",", $this->db->query("SELECT uid_likes FROM posts")->row()->uid_likes );
+            $uid_likes[] = (string) $this->session->user["uid"];
+            $add_like = $this->db->query("  UPDATE posts SET likes = likes + 1");
+            $add_uid_likes = $this->db->update("posts", ["uid_likes" => implode(",",$uid_likes)] );
+            // Добавить проверку
+
+        }
+
+    }
 }

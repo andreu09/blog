@@ -28,7 +28,13 @@ class Feed extends CI_Controller
             $config['total_rows'] = $this->Model_post->get()["post"]["count"];
             $this->pagination->initialize($config);
 
-            echo $this->twig->render("feed.php", array("base_url" => base_url(),"user" => $this->session->user, "title" => "Главная", "posts" => $this->Model_post->get( $this->uri->segment(2) ) ));
+            echo $this->twig->render("feed.php", [
+                "base_url" => base_url(),
+                "user" => $this->session->user,
+                "title" => "Главная",
+                "posts" => $this->Model_post->get( $this->uri->segment(2) )
+            ]);
+
             echo $this->pagination->create_links();
 
         } else {

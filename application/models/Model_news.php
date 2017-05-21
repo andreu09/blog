@@ -39,12 +39,8 @@ class Model_news extends CI_Model
     public function get($total = "")
     {
 
-        // Получаем 3 записи
         $this->db->order_by("id", "DESC");
         $news = $this->db->get("news",3,$total)->result();
-        //var_dump($total);
-       // $news = $this->db->query("SELECT * FROM news ORDER BY id DESC LIMIT 3,$total ")->result();
-
         // Сколько получили
         $news["current_count"] = count($news);
         // Всего записей

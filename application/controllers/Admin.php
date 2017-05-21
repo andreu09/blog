@@ -1,11 +1,13 @@
 <?php
 
 /**
- * @property Model_user $Model_user Optional description
+ * @property Model_user $Model_user Модель пользователя
+ * @property Model_admin $Model_admin Модель администратора
  */
 
 class Admin extends CI_Controller
 {
+
     public function __construct()
     {
         parent::__construct();
@@ -50,10 +52,12 @@ class Admin extends CI_Controller
                     $this->Model_admin->delete($uid);
                         break;
 
+                // Удаление блокировки
                 case "block[action=delete]" :
                    $this->Model_admin->block("delete",$uid);
                         break;
 
+                // Добавление блокировки
                 case "block[action=add]" :
                     $this->Model_admin->block("add",$uid);
                     break;

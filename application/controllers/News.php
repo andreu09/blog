@@ -27,7 +27,12 @@ class News extends CI_Controller
         $config['total_rows'] = $this->Model_news->get()["news"]["count"];
         $this->pagination->initialize($config);
 
-        echo $this->twig->render("news.php", array("user" => $this->session->user, "title" => "Новости", "news" => $this->Model_news->get($this->uri->segment(2)) ));
+        echo $this->twig->render("news.php", [
+            "user" => $this->session->user,
+            "title" => "Новости",
+            "news" => $this->Model_news->get( $this->uri->segment(2) )
+        ]);
+
         echo $this->pagination->create_links();
     }
 

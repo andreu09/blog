@@ -34,14 +34,37 @@
                 <img src="{{ base_url }}assets/images/posts/{{ posts.post[i].image }}">
             </div>
             <div class="content">
-            <span class="left floated">
-                <img src="{{ base_url }}assets/images/smiles/{{ posts.post[i].smile }}.png">
-            </span>
+                <span class="left floated">
+                    <img src="{{ base_url }}assets/images/smiles/{{ posts.post[i].smile }}.png">
+                </span>
+                <span class="right floated" onclick="like( {{ posts.post[i].id }} )">
+                   <i class="heart outline like icon"></i>
+                       {{ posts.post[i].likes }}
+                </span>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
 {% endif %}
+
+<script>
+
+    function like(post_id) {
+
+        $.ajax({
+
+            url: "/post/like",
+            data: { post_id : post_id },
+            dataType: "text",
+            type: "POST",
+            success: function (post) {
+
+                // Добавить проверку и обновление всех лайков
+                console.log(post);
+            }
+        })
+    }
+</script>
 
 {% include 'twig/footer.twig' %}

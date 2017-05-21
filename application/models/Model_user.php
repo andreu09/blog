@@ -65,6 +65,7 @@ class Model_user extends CI_Model
     /**
      * Получение информации о пользователе через uid
      * @param $uid
+     * @param $action
      * @return null
      */
 
