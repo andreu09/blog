@@ -73,6 +73,8 @@
 
             } else if (post.smile !== undefined) {
 
+                $(this).addClass('loading')
+
                 $.ajax({
 
                     url: "/post/action/add",

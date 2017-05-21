@@ -51,10 +51,19 @@
                 Администраторы:
             </div>
             <div class="content">
-                <div class="ui four column grid">
-                    <div class="row">
+
                         {% for i in 0..admins.count - 1 %}
                         <div class="column">
+                            <a class="ui yellow image label">
+                                <img src="{{ admins.user[i].photo_200 }}">
+                                {{ admins.user[i].first_name }} {{ admins.user[i].last_name }}
+                                <div class="detail">
+                                    <a target="_blank" href="/admin/action/delete/{{  admins.user[i].uid }}">
+                                        Снять с должности
+                                    </a>
+                                </div>
+                                <div class="detail">Co-worker</div>
+                            </a>
                             <div class="ui fluid  card">
                                 <div class="image">
                                     <img src="{{ admins.user[i].photo_200 }}">
@@ -74,8 +83,6 @@
                                                 Заблокировать доступ
                                             </div>
                                         </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         {% endfor %}
