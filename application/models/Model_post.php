@@ -40,9 +40,10 @@ class Model_post extends CI_Model
     {
         if( $this->input->post("smile") !== "" && $this->input->post("image") ) {
 
+            $time = date("Y-m-d");
             $image_name = $this->session->user["uid"] . "_" . time() . ".jpg";
             $upload = file_put_contents("assets/images/posts/" . $image_name, base64_decode(explode(",",$this->input->post("image"))[1]));
-            $query = $this->db->insert("posts", array("uid" => $this->session->user["uid"], "image" => $image_name, "smile" => $this->input->post("smile")));
+            $query = $this->db->insert("posts", array("uid" => $this->session->user["uid"], "image" => $image_name, "smile" => $this->input->post("smile") , "time" => $time));
 
             if($upload && $query ) {
 
@@ -67,9 +68,13 @@ class Model_post extends CI_Model
 
     }
 
+    /**
+     * Лайкаем пост
+     * @param $post_id
+     */
     public function like($post_id)
     {
-        $uid_likes = explode(",", $this->db->query("SELECT uid_likes FROM posts")->row()->uid_likes );
+        $uid_likes = explode(",", $this->db->query("SELECT uid_likes FROM posts  WHERE id  = '$post_id'")->row()->uid_likes );
 
         if( in_array($this->session->user["uid"],$uid_likes) )
         {
@@ -83,20 +88,28 @@ class Model_post extends CI_Model
                 }
             }
 
-           $delete_like = $this->db->query("  UPDATE posts SET likes = likes - 1");
-           $delete_uid_likes = $this->db->update("posts", ["uid_likes" => implode(",",$uid_likes)] );
-            // Добавить проверку
+            $delete_like = $this->db->query("  UPDATE posts SET likes = likes - 1 WHERE id  = '$post_id' ");
+            $this->db->where('id', $post_id);
+            $delete_uid_likes = $this->db->update("posts", ["uid_likes" => implode(",",$uid_likes)] );
 
         } else {
 
-            // Новый лайк
-            $uid_likes = explode(",", $this->db->query("SELECT uid_likes FROM posts")->row()->uid_likes );
+            // Новый
+            $uid_likes = explode(",", $this->db->query("SELECT uid_likes FROM posts  WHERE id  = '$post_id'")->row()->uid_likes );
             $uid_likes[] = (string) $this->session->user["uid"];
-            $add_like = $this->db->query("  UPDATE posts SET likes = likes + 1");
+            $add_like = $this->db->query("  UPDATE posts SET likes = likes + 1  WHERE id  = '$post_id'");
+            $this->db->where('id', $post_id);
             $add_uid_likes = $this->db->update("posts", ["uid_likes" => implode(",",$uid_likes)] );
-            // Добавить проверку
 
         }
+
+        // Количество всех лайков поста, который лайкали
+        $likes = $this->db->query(" SELECT likes FROM posts  WHERE id  = '$post_id'")->row()->likes;
+
+        // Проверим добавляли или убирали лайк
+        in_array($this->session->user["uid"],$uid_likes) ? $action = "add" : $action = "delete";
+
+        echo json_encode([ "post_id" =>$post_id, "likes" => $likes, "action" => $action ]);
 
     }
 }

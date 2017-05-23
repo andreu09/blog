@@ -37,9 +37,10 @@
                 <span class="left floated">
                     <img src="{{ base_url }}assets/images/smiles/{{ posts.post[i].smile }}.png">
                 </span>
+                {% set uid_likes =  posts.post[i].uid_likes|split(',') %}
                 <span class="right floated" onclick="like( {{ posts.post[i].id }} )">
-                   <i class="heart outline like icon"></i>
-                       {{ posts.post[i].likes }}
+                   <i id="icon_{{ posts.post[i].id }}" class="heart {% for g in 0..posts.post[i].likes %} {% if uid_likes[g] == user.uid %} red {% endif %} {% endfor %} like icon"></i>
+                    <span id="{{ posts.post[i].id }}">{{ posts.post[i].likes }}</span>
                 </span>
             </div>
         </div>
@@ -56,12 +57,20 @@
 
             url: "/post/like",
             data: { post_id : post_id },
-            dataType: "text",
+            dataType: "json",
             type: "POST",
             success: function (post) {
 
-                // Добавить проверку и обновление всех лайков
-                console.log(post);
+                $("#" + post_id).html(post.likes);
+                // В зависимости от действия добавляем или убираем закрашивание иконки лайка
+                post.action == "delete" ?  $("#icon_" + post_id).removeClass("red") :  $("#icon_" + post_id).addClass("red");
+            },
+            beforeSend: function () {
+
+                // Пока грузиться анимируем
+                $("#icon_" + post_id)
+                    .transition('jiggle')
+                ;
             }
         })
     }

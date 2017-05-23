@@ -87,15 +87,36 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "smile"), "html", null, true);
                 echo ".png\">
                 </span>
-                <span class=\"right floated\" onclick=\"like( ";
+                ";
                 // line 40
+                $context["uid_likes"] = twig_split_filter($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "uid_likes"), ",");
+                // line 41
+                echo "                <span class=\"right floated\" onclick=\"like( ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "id"), "html", null, true);
                 echo " )\">
-                   <i class=\"heart outline like icon\"></i>
-                       ";
+                   <i id=\"icon_";
                 // line 42
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "id"), "html", null, true);
+                echo "\" class=\"heart ";
+                $context['_parent'] = (array) $context;
+                $context['_seq'] = twig_ensure_traversable(range(0, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "likes")));
+                foreach ($context['_seq'] as $context["_key"] => $context["g"]) {
+                    echo " ";
+                    if (($this->getAttribute((isset($context["uid_likes"]) ? $context["uid_likes"] : null), (isset($context["g"]) ? $context["g"] : null), array(), "array") == $this->getAttribute((isset($context["user"]) ? $context["user"] : null), "uid"))) {
+                        echo " red ";
+                    }
+                    echo " ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['g'], $context['_parent'], $context['loop']);
+                $context = array_merge($_parent, array_intersect_key($context, $_parent));
+                echo " like icon\"></i>
+                    <span id=\"";
+                // line 43
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "id"), "html", null, true);
+                echo "\">";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "likes"), "html", null, true);
-                echo "
+                echo "</span>
                 </span>
             </div>
         </div>
@@ -104,12 +125,12 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
             $context = array_merge($_parent, array_intersect_key($context, $_parent));
-            // line 47
+            // line 48
             echo "    </div>
 </div>
 ";
         }
-        // line 50
+        // line 51
         echo "
 <script>
 
@@ -119,18 +140,27 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
 
             url: \"/post/like\",
             data: { post_id : post_id },
-            dataType: \"text\",
+            dataType: \"json\",
             type: \"POST\",
             success: function (post) {
 
-                console.log(post);
+                \$(\"#\" + post_id).html(post.likes);
+                // В зависимости от действия добавляем или убираем закрашивание иконки лайка
+                post.action == \"delete\" ?  \$(\"#icon_\" + post_id).removeClass(\"red\") :  \$(\"#icon_\" + post_id).addClass(\"red\");
+            },
+            beforeSend: function () {
+
+                // Пока грузиться анимируем
+                \$(\"#icon_\" + post_id)
+                    .transition('jiggle')
+                ;
             }
         })
     }
 </script>
 
 ";
-        // line 69
+        // line 79
         $this->env->loadTemplate("twig/footer.twig")->display($context);
     }
 
@@ -146,6 +176,6 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  134 => 69,  113 => 50,  108 => 47,  97 => 42,  92 => 40,  85 => 38,  76 => 34,  68 => 31,  64 => 30,  60 => 29,  56 => 27,  52 => 26,  48 => 24,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
+        return array (  164 => 79,  134 => 51,  129 => 48,  116 => 43,  99 => 42,  94 => 41,  92 => 40,  85 => 38,  76 => 34,  68 => 31,  64 => 30,  60 => 29,  56 => 27,  52 => 26,  48 => 24,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
     }
 }

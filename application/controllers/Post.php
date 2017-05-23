@@ -29,6 +29,6 @@ class Post extends CI_Controller
 
     public function like()
     {
-        $this->Model_post->like( $this->input->post("post_id") , $this->session->user["uid"] );
+        $this->Model_post->like( $this->input->post("post_id"));
     }
 }
