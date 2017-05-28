@@ -24,30 +24,30 @@ class __TwigTemplate_ef6b721787e0268665afa1e47a063853 extends Twig_Template
         ";
         // line 5
         $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable(range(0, ($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "news"), "current_count") - 1)));
+        $context['_seq'] = twig_ensure_traversable(range(0, ($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "current_count") - 1)));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
             // line 6
             echo "        <div class=\"ui card fluid\">
             <div class=\"content\">
                 <div class=\"header\">";
             // line 8
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "news"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "title"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "item"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "title"), "html", null, true);
             echo "</div>
                 <div class=\"meta\">
                     <span class=\"right floated time\">";
             // line 10
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "news"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "time"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "item"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "time"), "html", null, true);
             echo "</span>
                     <span class=\"category\">";
             // line 11
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "news"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "type"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "item"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "type"), "html", null, true);
             echo "</span>
                 </div>
                 <div class=\"description\">
                     <p>
                        ";
             // line 15
-            echo nl2br(twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "news"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "text"), "html", null, true));
+            echo nl2br(twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "item"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "text"), "html", null, true));
             echo "
                     </p>
                 </div>
@@ -56,11 +56,11 @@ class __TwigTemplate_ef6b721787e0268665afa1e47a063853 extends Twig_Template
                 <div class=\"right floated author\">
                     <img class=\"ui avatar image\" src=\"";
             // line 21
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), 0, array(), "array"), "photo_50"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "photo_50"), "html", null, true);
             echo "\"> ";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), 0, array(), "array"), "first_name"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "first_name"), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), 0, array(), "array"), "last_name"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["news"]) ? $context["news"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "last_name"), "html", null, true);
             echo "
                 </div>
             </div>

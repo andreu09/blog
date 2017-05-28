@@ -137,7 +137,7 @@ class Model_post extends CI_Model
             // Вычитаем один лайк
             $delete_like = $this->db->query(" UPDATE posts SET likes = likes - 1 WHERE id  = '$post_id' ");
 
-            // Выбтраем где айди поста равно запрошенному {$post_id}
+            // Выбираем где айди поста равно запрошенному {$post_id}
             $this->db->where('id', $post_id);
 
             // Обновляем данные uid лайкнувших
@@ -150,7 +150,11 @@ class Model_post extends CI_Model
 
             // Плюсуем один лайк
             $add_like = $this->db->query("  UPDATE posts SET likes = likes + 1  WHERE id  = '$post_id'");
+
+            // Выбираем где айди поста равно запрошенному {$post_id}
             $this->db->where('id', $post_id);
+
+            // Обновляем данные uid лайкнувших
             $add_uid_likes = $this->db->update("posts", ["uid_likes" => implode(",",$uid_likes)] );
 
         }

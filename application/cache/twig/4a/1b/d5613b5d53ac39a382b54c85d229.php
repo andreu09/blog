@@ -76,19 +76,21 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
                         ";
             }
             // line 33
-            echo "                        ";
+            echo "
+                        ";
+            // line 34
             if ($this->getAttribute((isset($context["user"]) ? $context["user"] : null), "status")) {
-                // line 34
+                // line 35
                 echo "                            <a href=\"/admin\" class=\"item\">Админ панель</a>
                         ";
             }
-            // line 36
+            // line 37
             echo "                        <a href=\"user/out\" class=\"item\">Выйти</a>
                     </div>
                 </div>
                 ";
         } else {
-            // line 40
+            // line 41
             echo "                <div class=\"item\">
                     <a onclick=\"\$(this).addClass('loading')\" class=\"ui vk button\" style=\"color:white\" href=\"https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://shmakov-andrey.ru/user/vk_auth&response_type=code&v=5.64\">
                         <i class=\"vk icon\"></i>
@@ -97,17 +99,17 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
                 </div>
                 ";
         }
-        // line 47
+        // line 48
         echo "            </div>
         </div>
 
     ";
-        // line 50
+        // line 51
         if (((isset($context["title"]) ? $context["title"] : null) == "Главная")) {
-            // line 51
+            // line 52
             echo "        ";
             $this->env->loadTemplate("twig/modal_post.twig")->display($context);
-            // line 52
+            // line 53
             echo "    ";
         }
     }
@@ -124,6 +126,6 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  111 => 52,  108 => 51,  106 => 50,  101 => 47,  92 => 40,  86 => 36,  82 => 34,  79 => 33,  75 => 31,  73 => 30,  64 => 28,  61 => 27,  59 => 26,  50 => 22,  42 => 19,  25 => 5,  19 => 1,);
+        return array (  113 => 53,  110 => 52,  108 => 51,  103 => 48,  94 => 41,  88 => 37,  84 => 35,  82 => 34,  79 => 33,  75 => 31,  73 => 30,  61 => 27,  59 => 26,  50 => 22,  42 => 19,  25 => 5,  213 => 119,  154 => 62,  149 => 59,  136 => 54,  119 => 53,  114 => 52,  112 => 51,  105 => 49,  97 => 43,  93 => 41,  87 => 39,  85 => 38,  76 => 34,  68 => 31,  64 => 28,  60 => 29,  56 => 27,  52 => 26,  48 => 24,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
     }
 }

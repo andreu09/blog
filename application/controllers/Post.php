@@ -10,26 +10,28 @@ class Post extends CI_Controller
         $this->load->model("Model_post");
     }
 
+
     /**
-     * Действия с постами
-     * @param $action
-     * @internal param string $uid
+     * Добавление
      */
 
-    public function action($action)
+    public function add()
     {
-        switch ($action) {
-
-            case "add" :
-                $this->Model_post->add();
-                    break;
-        }
+        $this->Model_post->add();
     }
+
+    /**
+     * Мне нравиться
+     */
 
     public function like()
     {
         $this->Model_post->like( $this->input->post("post_id"));
     }
+
+    /**
+     * Удаление
+     */
 
     public function delete()
     {

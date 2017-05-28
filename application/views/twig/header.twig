@@ -30,6 +30,7 @@
                         {% if title == "Главная" %}
                             <a class="item" onclick="$('#modal-post').modal('show');">Создать запись</a>
                         {% endif %}
+
                         {% if user.status %}
                             <a href="/admin" class="item">Админ панель</a>
                         {% endif %}

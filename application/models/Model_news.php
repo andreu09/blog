@@ -13,12 +13,13 @@ class Model_news extends CI_Model
 
     public function add($title, $text, $type)
     {
-        $insert = $this->db->insert('news', array(
+        $insert = $this->db->insert('news', [
             "uid"   => $this->session->user["uid"],
             "title" => $title,
             "text"  => $text,
-            "type"  => $type
-        ) );
+            "type"  => $type,
+            "time"  => date("Y-m-d")
+        ]);
 
        if($insert) {
 
@@ -26,6 +27,7 @@ class Model_news extends CI_Model
 
        } else {
 
+           // Ошибка базы...
            return null;
        }
     }
@@ -33,26 +35,32 @@ class Model_news extends CI_Model
     /**
      * Получение новостей
      * @param string $total
-     * @return array
+     * @return Model_news
      */
 
     public function get($total = "")
     {
+        /** @var Model_news $news */
+        $news = [];
 
+        // В обратном порядке
         $this->db->order_by("id", "DESC");
-        $news = $this->db->get("news",3,$total)->result();
-        // Сколько получили
-        $news["current_count"] = count($news);
-        // Всего записей
+
+        // Получаем все новости
+        $news["item"] = $this->db->get("news",3,$total)->result_array();
+
+        // Текущее количество новостей которые вытащили
+        $news["current_count"] = count($news["item"]);
+
+        // Всего новостей
         $news["count"] = $this->db->count_all("news");
-        // Массив с данымми о пользователях, которые публиковали новости
-        $user = [];
+
         for($i = 0; $i <=  $news["current_count"] - 1; $i++) {
 
-            $user[] = $this->Model_user->get("user",$news[$i]->uid);
+            $news["user"][] = $this->Model_user->get("users",$news["item"][$i]["uid"]);
         }
 
-        return array( "news" => $news, "user" => (array) $user );
+        return $news;
     }
 
 

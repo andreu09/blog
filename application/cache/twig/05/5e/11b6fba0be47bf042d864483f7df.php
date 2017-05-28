@@ -70,33 +70,33 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "last_name"), "html", null, true);
                 echo "
             </div>
-            <div class=\"image\">
+            <div class=\"image event\">
                 <img src=\"";
                 // line 34
                 echo twig_escape_filter($this->env, (isset($context["base_url"]) ? $context["base_url"] : null), "html", null, true);
                 echo "assets/images/posts/";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "image"), "html", null, true);
                 echo "\" style=\"max-height: 450px; background-size: cover;\">
-                    <div class=\"ui dimmer\">
-                        <div class=\"content\">
-                            <div class=\"center\">
-                                ";
+                <div class=\"ui inverted  dimmer\">
+                    <div class=\"content\">
+                        <div class=\"center\">
+                            ";
                 // line 38
                 if (($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "uid") == $this->getAttribute((isset($context["user"]) ? $context["user"] : null), "uid"))) {
                     // line 39
-                    echo "                                <div onclick=\"delete_post( ";
+                    echo "                            <div onclick=\"delete_post( ";
                     echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "id"), "html", null, true);
                     echo " )\" class=\"ui red small button\"><i class=\"remove icon\"></i>Удалить запись</div>
-                                ";
+                            ";
                 } else {
                     // line 41
-                    echo "                                <div class=\"ui warning small button\"><i class=\"warning sign icon\"></i>Пожаловаться</div>
-                                ";
+                    echo "                            <div class=\"ui orange small button\"><i class=\"warning sign icon\"></i>Пожаловаться</div>
+                            ";
                 }
                 // line 43
-                echo "                            </div>
-                        </div>
+                echo "                        </div>
                     </div>
+                </div>
             </div>
             <div class=\"content\">
                 <span class=\"left floated\">
@@ -154,7 +154,7 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
         echo "
 <script>
 
-    \$('.image').dimmer({on: 'hover'});
+    \$('.image.event').dimmer({on: 'hover'});
 
     function delete_post(post_id) {
 
@@ -198,7 +198,10 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
 
                 // Пока грузиться анимируем
                 \$(\"#icon_\" + post_id)
-                    .transition('jiggle')
+                    .transition({
+                        animation  : 'pulse',
+                        duration   : '1s'
+                    })
                 ;
             }
         })
@@ -206,7 +209,7 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
 </script>
 
 ";
-        // line 116
+        // line 119
         $this->env->loadTemplate("twig/footer.twig")->display($context);
     }
 
@@ -222,6 +225,6 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  210 => 116,  154 => 62,  149 => 59,  136 => 54,  119 => 53,  114 => 52,  112 => 51,  105 => 49,  97 => 43,  93 => 41,  87 => 39,  85 => 38,  76 => 34,  68 => 31,  64 => 30,  60 => 29,  56 => 27,  52 => 26,  48 => 24,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
+        return array (  213 => 119,  154 => 62,  149 => 59,  136 => 54,  119 => 53,  114 => 52,  112 => 51,  105 => 49,  97 => 43,  93 => 41,  87 => 39,  85 => 38,  76 => 34,  68 => 31,  64 => 30,  60 => 29,  56 => 27,  52 => 26,  48 => 24,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
     }
 }

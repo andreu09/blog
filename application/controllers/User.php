@@ -29,11 +29,6 @@ class User extends CI_Controller
         $this->photo_200    = isset($this->session->user["uid"]) ? $this->Model_user->get("user",$this->session->user["uid"])->photo_200 : null;
     }
 
-    public function debug()
-    {
-        var_dump( $this->Model_user->get("block") );
-    }
-
     /**
      * Настройка профиля пользователя
      * @param string $uid
@@ -78,11 +73,13 @@ class User extends CI_Controller
 
             } else {
 
+                // Пользователь не сущетвует
                 show_404();
             }
 
         } else {
 
+            // Не указан uid пользователя
             show_404();
         }
     }
@@ -105,20 +102,30 @@ class User extends CI_Controller
                 switch ($this->Model_user->vk_auth($user->response[0])) {
 
                     case true :
+
                         // Добавляем статус пользователя
                         $user->response[0]->status = $this->Model_user->get("user",$user->response[0]->uid)->status;
+
                         // Все вместе заносим в сессию
                         $this->session->set_userdata( array("user" => (array) $user->response[0] ) );
+
                         // Редирект на главную
                         redirect( base_url() );
+
                             break;
 
                     case false :
+
+                        // Аккаунт зааблокирован
                         echo "Уважаемый {$user->response[0]->first_name}, ваш аккаунт заблокирован! ";
+
                             break;
 
                     case null :
+
+                        // Что-то с базой данных...
                         echo "Произогла ошибка в базе данных... Повторите позднее...";
+
                             break;
                 }
 
@@ -141,15 +148,17 @@ class User extends CI_Controller
 
     public function out()
     {
-        // Если пользователь авторизован
+
         if( isset($this->session->user["uid"]) ) {
 
             // Удаляем всю информацию о пользвателе
             $this->session->unset_userdata("user");
+
             redirect( base_url() );
 
         } else {
 
+            // Пользователь не авторизован и попал на страницу выхода из личного кабинета
             show_404();
         }
     }
@@ -161,6 +170,7 @@ class User extends CI_Controller
      * @return mixed
      */
 
+   /**
     public function get($action, $uid = "")
     {
 
@@ -175,5 +185,6 @@ class User extends CI_Controller
                     break;
         }
     }
+    */
 
 }

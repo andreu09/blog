@@ -8,24 +8,27 @@ class Model_user extends CI_Model
      * @return bool|null
      */
 
-    public function vk_auth($user ) {
+    public function vk_auth($user) {
 
+        // Выбираем [uid] and [block] пользователя {$user}
         $query = $this->db->query("SELECT uid,block FROM users WHERE uid = $user->id")->row();
+
+        // id вконтакте это и есть наш uid пользователя
         $user->uid = $user->id;
+
+        // Удаляем id ибо он нам больше не нужен
+        unset($user->id);
 
         if($query !== null) {
 
             // Выбираем uid пользователя
             $this->db->where('uid', $user->id);
-            // Удаляем id ибо оно все равно не меняется
-            unset($user->id);
+
             // Обновляем его данные
             $update = $this->db->update('users', $user);
 
-            // Проверяем прошел ли процесс обновления данных пользователя
             if($update) {
 
-                // Проверка на блокировку пользователя
                 if($query->block) {
 
                     // Пользователь блокирован
@@ -39,14 +42,13 @@ class Model_user extends CI_Model
 
             } else {
 
-                // Ошибка добавления
+                // Ошибка добавления, что то с базой не так...
                 return null;
             }
-        // Новый пользователь
+
         } else {
 
-            // Удаляем id ибо оно все равно не меняется
-            unset($user->id);
+            // Пользователь новый, заносим все его данные
             $insert = $this->db->insert('users', $user);
 
             if($insert) {
@@ -56,7 +58,7 @@ class Model_user extends CI_Model
 
             } else {
 
-                // Ошибка добавления пользователя
+                // Ошибка добавления нового пользователя, что то не так с базой...
                 return null;
             }
         }
@@ -74,35 +76,34 @@ class Model_user extends CI_Model
         /** @var Model_user $result */
         $result = [];
 
+        /** @var Model_user $where */
+        $where_uid = [ "uid" => $uid ];
+
+        /** @var Model_user $where_block */
+        $where_block = [ "block" => true ];
+
         switch ($action) {
 
             case "user" :
-                $where = [ "uid" => $uid ];
-                $result = $this->db->get_where('users', $where )->row();
+
+                // Информации об одном пользователе по [uid]
+                $result = $this->db->get_where('users', $where_uid )->row();
                     break;
 
             case "users" :
-                $where = [ "uid" => $uid ];
-                $result = $this->db->get_where('users', $where )->result_array()[0];
-               // $query->count = count($query);
+
+                // Информация об нескольких пользователях по uid
+                $result = $this->db->get_where('users', $where_uid )->result_array()[0];
                     break;
 
             case "block" :
-                $where = [ "block" => true];
-                $result = $this->db->get_where('users', $where )->result();
+
+                // Информация о пользователях, которые заблокированы
+                $result = $this->db->get_where('users', $where_block )->result_array()[0];
                     break;
         }
 
-        if($result !== null) {
-
-            // Массив с данными пользователя
-            return $result;
-
-        } else {
-
-            // Пользователь не найден
-            return null;
-        }
+        return $result !== null ? $result : null;
     }
 
 }

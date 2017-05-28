@@ -30,19 +30,19 @@
                 <img class="ui avatar image" src="{{ posts.user[i].photo_50 }}">
                 {{ posts.user[i].first_name }} {{ posts.user[i].last_name }}
             </div>
-            <div class="image">
+            <div class="image event">
                 <img src="{{ base_url }}assets/images/posts/{{ posts.post[i].image }}" style="max-height: 450px; background-size: cover;">
-                    <div class="ui dimmer">
-                        <div class="content">
-                            <div class="center">
-                                {% if  posts.user[i].uid == user.uid %}
-                                <div onclick="delete_post( {{ posts.post[i].id }} )" class="ui red small button"><i class="remove icon"></i>Удалить запись</div>
-                                {% else %}
-                                <div class="ui warning small button"><i class="warning sign icon"></i>Пожаловаться</div>
-                                {% endif %}
-                            </div>
+                <div class="ui inverted  dimmer">
+                    <div class="content">
+                        <div class="center">
+                            {% if  posts.user[i].uid == user.uid %}
+                            <div onclick="delete_post( {{ posts.post[i].id }} )" class="ui red small button"><i class="remove icon"></i>Удалить запись</div>
+                            {% else %}
+                            <div class="ui orange small button"><i class="warning sign icon"></i>Пожаловаться</div>
+                            {% endif %}
                         </div>
                     </div>
+                </div>
             </div>
             <div class="content">
                 <span class="left floated">
@@ -62,7 +62,7 @@
 
 <script>
 
-    $('.image').dimmer({on: 'hover'});
+    $('.image.event').dimmer({on: 'hover'});
 
     function delete_post(post_id) {
 
@@ -106,7 +106,10 @@
 
                 // Пока грузиться анимируем
                 $("#icon_" + post_id)
-                    .transition('jiggle')
+                    .transition({
+                        animation  : 'pulse',
+                        duration   : '1s'
+                    })
                 ;
             }
         })
