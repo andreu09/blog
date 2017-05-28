@@ -25,7 +25,7 @@ class Feed extends CI_Controller
             $config["cur_tag_open"] = '<a class="active item">';
             $config["cur_tag_close"] = '</a>';
             $config['attributes'] = array('class' => 'item');
-            $config['total_rows'] = $this->Model_post->get()["post"]["count"];
+            $config['total_rows'] = $this->Model_post->get()["count"];
             $this->pagination->initialize($config);
 
             echo $this->twig->render("feed.php", [

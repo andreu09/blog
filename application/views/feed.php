@@ -1,6 +1,6 @@
 {% include 'twig/header.twig' %}
 
-{%  if posts.post.current_count == 0 %}
+{%  if posts.count == 0 %}
 <div class="ui two column centered grid stackable">
     <div class="eight wide column">
         <div class="ui icon message">
@@ -23,15 +23,26 @@
 {% else %}
 <div class="ui two column centered grid stackable">
     <div class="eight wide column">
-        {% for i in 0..posts.post.current_count - 1 %}
+        {% for i in 0..posts.current_count - 1 %}
         <div class="ui card fluid">
             <div class="content">
                 <div class="right floated meta">{{ posts.post[i].time }}</div>
-                <img class="ui avatar image" src="{{ posts.user[i][0].photo_50 }}">
-                {{ posts.user[i][0].first_name }} {{ posts.user[i][0].last_name }}
+                <img class="ui avatar image" src="{{ posts.user[i].photo_50 }}">
+                {{ posts.user[i].first_name }} {{ posts.user[i].last_name }}
             </div>
             <div class="image">
-                <img src="{{ base_url }}assets/images/posts/{{ posts.post[i].image }}">
+                <img src="{{ base_url }}assets/images/posts/{{ posts.post[i].image }}" style="max-height: 450px; background-size: cover;">
+                    <div class="ui dimmer">
+                        <div class="content">
+                            <div class="center">
+                                {% if  posts.user[i].uid == user.uid %}
+                                <div onclick="delete_post( {{ posts.post[i].id }} )" class="ui red small button"><i class="remove icon"></i>Удалить запись</div>
+                                {% else %}
+                                <div class="ui warning small button"><i class="warning sign icon"></i>Пожаловаться</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
             </div>
             <div class="content">
                 <span class="left floated">
@@ -50,6 +61,32 @@
 {% endif %}
 
 <script>
+
+    $('.image').dimmer({on: 'hover'});
+
+    function delete_post(post_id) {
+
+        $.ajax({
+
+            url: "/post/delete",
+            data: { post_id : post_id },
+            dataType: "json",
+            type: "POST",
+            success: function (data) {
+
+                if(data.status === true) {
+                    location.reload();
+
+                } else {
+
+                    alert("Произошла ошибка...");
+                }
+            },
+            beforeSend: function () {
+
+            }
+        })
+    }
 
     function like(post_id) {
 

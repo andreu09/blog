@@ -31,8 +31,10 @@ class Twig
         $twig_env_options = array(
             'auto_reload' => true,
             'cache' => $this->_cache_dir,
+            'debug' => true
         );
         $this->_twig = new Twig_Environment($loader, $twig_env_options);
+        $this->_twig->addExtension(new Twig_Extension_Debug());
 		
 	}
 

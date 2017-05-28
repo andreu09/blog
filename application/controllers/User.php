@@ -6,11 +6,32 @@ class User extends CI_Controller
     public $client_id       = 5240196;
     private $client_secret  = "HNpmCCcNSLY5ep0oETMH";
 
+    public $first_name;
+    public $last_name;
+    public $status;
+    public $block;
+    public $photo_50;
+    public $photo_100;
+    public $photo_200;
+
     public function __construct()
     {
         parent::__construct();
         $this->load->database();
         $this->load->model('Model_user');
+
+        $this->first_name   = isset($this->session->user["uid"]) ? $this->Model_user->get("user",$this->session->user["uid"])->first_name : null;
+        $this->last_name    = isset($this->session->user["uid"]) ? $this->Model_user->get("user",$this->session->user["uid"])->last_name : null;
+        $this->status       = isset($this->session->user["uid"]) ? (bool) $this->Model_user->get("user",$this->session->user["uid"])->status : null;
+        $this->block        = isset($this->session->user["uid"]) ? (bool) $this->Model_user->get("user",$this->session->user["uid"])->block : null;
+        $this->photo_50     = isset($this->session->user["uid"]) ? $this->Model_user->get("user",$this->session->user["uid"])->photo_50 : null;
+        $this->photo_100    = isset($this->session->user["uid"]) ? $this->Model_user->get("user",$this->session->user["uid"])->photo_100 : null;
+        $this->photo_200    = isset($this->session->user["uid"]) ? $this->Model_user->get("user",$this->session->user["uid"])->photo_200 : null;
+    }
+
+    public function debug()
+    {
+        var_dump( $this->Model_user->get("block") );
     }
 
     /**
@@ -49,6 +70,11 @@ class User extends CI_Controller
             if( $this->Model_user->get("user",$uid)["count"] ) {
 
                 // Выводим страницу для отображения информации о пользователе
+                echo $this->twig->render("user.php", [
+                    "base_url" => base_url(),
+                    "user" => $this->session->user,
+                    "title" => "Просмотр профиля",
+                ]);
 
             } else {
 
@@ -80,7 +106,7 @@ class User extends CI_Controller
 
                     case true :
                         // Добавляем статус пользователя
-                        $user->response[0]->status = $this->Model_user->get("user",$user->response[0]->uid)[0]["status"];
+                        $user->response[0]->status = $this->Model_user->get("user",$user->response[0]->uid)->status;
                         // Все вместе заносим в сессию
                         $this->session->set_userdata( array("user" => (array) $user->response[0] ) );
                         // Редирект на главную

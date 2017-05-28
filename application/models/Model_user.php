@@ -71,26 +71,32 @@ class Model_user extends CI_Model
 
     public function get($action,$uid = "")
     {
-        $where = [];
+        /** @var Model_user $result */
+        $result = [];
 
         switch ($action) {
 
             case "user" :
-                $where = array( "uid" => $uid );
+                $where = [ "uid" => $uid ];
+                $result = $this->db->get_where('users', $where )->row();
+                    break;
+
+            case "users" :
+                $where = [ "uid" => $uid ];
+                $result = $this->db->get_where('users', $where )->result_array()[0];
+               // $query->count = count($query);
                     break;
 
             case "block" :
-                $where = array("block" => 1 );
+                $where = [ "block" => true];
+                $result = $this->db->get_where('users', $where )->result();
                     break;
         }
 
-        $query = $this->db->get_where('users', $where )->result_array();
-        $query["count"] = count($query);
-
-        if($query !== null) {
+        if($result !== null) {
 
             // Массив с данными пользователя
-            return $query;
+            return $result;
 
         } else {
 
