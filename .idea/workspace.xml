@@ -2,18 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bf38b85-262f-40b2-b890-3d0c2c3c544e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/js/posts.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/upload-image.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/05/5e/11b6fba0be47bf042d864483f7df.php" afterPath="$PROJECT_DIR$/application/cache/twig/05/5e/11b6fba0be47bf042d864483f7df.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/4a/1b/d5613b5d53ac39a382b54c85d229.php" afterPath="$PROJECT_DIR$/application/cache/twig/4a/1b/d5613b5d53ac39a382b54c85d229.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/9d/cb/8b88c57ca25ff1d2570a5b1b8b1a.php" afterPath="$PROJECT_DIR$/application/cache/twig/9d/cb/8b88c57ca25ff1d2570a5b1b8b1a.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/cache/twig/ef/6b/721787e0268665afa1e47a063853.php" afterPath="$PROJECT_DIR$/application/cache/twig/ef/6b/721787e0268665afa1e47a063853.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Feed.php" afterPath="$PROJECT_DIR$/application/controllers/Feed.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/News.php" afterPath="$PROJECT_DIR$/application/controllers/News.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Post.php" afterPath="$PROJECT_DIR$/application/controllers/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/User.php" afterPath="$PROJECT_DIR$/application/controllers/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_news.php" afterPath="$PROJECT_DIR$/application/models/Model_news.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_post.php" afterPath="$PROJECT_DIR$/application/models/Model_post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_user.php" afterPath="$PROJECT_DIR$/application/models/Model_user.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/feed.php" afterPath="$PROJECT_DIR$/application/views/feed.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/news.php" afterPath="$PROJECT_DIR$/application/views/news.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/twig/footer.twig" afterPath="$PROJECT_DIR$/application/views/twig/footer.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/twig/header.twig" afterPath="$PROJECT_DIR$/application/views/twig/header.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/twig/modal_post.twig" afterPath="$PROJECT_DIR$/application/views/twig/modal_post.twig" />
     </list>
@@ -38,25 +41,20 @@
     <favorites_list name="blog.loc" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="feed.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/feed.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>enable_query_strings</find>
       <find>permitted_uri_chars</find>
+      <find>onclick=&quot;like</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -83,7 +81,6 @@
         <option value="$PROJECT_DIR$/assets/js/upload-image.js" />
         <option value="$PROJECT_DIR$/application/controllers/Bot.php" />
         <option value="$PROJECT_DIR$/application/controllers/Welcome.php" />
-        <option value="$PROJECT_DIR$/application/views/twig/footer.twig" />
         <option value="$PROJECT_DIR$/application/config/autoload.php" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/models/Model_admin.php" />
@@ -98,17 +95,19 @@
         <option value="$PROJECT_DIR$/application/controllers/test.php" />
         <option value="$PROJECT_DIR$/application/controllers/Test.php" />
         <option value="$PROJECT_DIR$/application/libraries/Twig.php" />
-        <option value="$PROJECT_DIR$/application/views/twig/modal_post.twig" />
         <option value="$PROJECT_DIR$/application/controllers/Post.php" />
-        <option value="$PROJECT_DIR$/application/controllers/News.php" />
-        <option value="$PROJECT_DIR$/application/views/news.php" />
         <option value="$PROJECT_DIR$/application/models/Model_news.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Feed.php" />
         <option value="$PROJECT_DIR$/application/controllers/User.php" />
-        <option value="$PROJECT_DIR$/application/models/Model_post.php" />
         <option value="$PROJECT_DIR$/application/models/Model_user.php" />
-        <option value="$PROJECT_DIR$/application/views/twig/header.twig" />
+        <option value="$PROJECT_DIR$/application/controllers/News.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Feed.php" />
+        <option value="$PROJECT_DIR$/application/views/news.php" />
+        <option value="$PROJECT_DIR$/application/models/Model_post.php" />
+        <option value="$PROJECT_DIR$/application/views/twig/modal_post.twig" />
+        <option value="$PROJECT_DIR$/application/views/twig/footer.twig" />
+        <option value="$PROJECT_DIR$/assets/js/posts.js" />
         <option value="$PROJECT_DIR$/application/views/feed.php" />
+        <option value="$PROJECT_DIR$/application/views/twig/header.twig" />
       </list>
     </option>
   </component>
@@ -209,6 +208,7 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.24289912" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -227,11 +227,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Model_user.php">
+  <component name="RunManager" selected="Node.js.posts.js">
     <configuration default="false" name="User.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/application/controllers/User.php">
       <method />
     </configuration>
     <configuration default="false" name="Model_user.php" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/blog.loc/application/models/Model_user.php">
+      <method />
+    </configuration>
+    <configuration default="false" name="posts.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="posts.js" working-dir="$PROJECT_DIR$/assets/js">
       <method />
     </configuration>
     <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
@@ -301,14 +304,16 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="PHP Script.User.php" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Model_user.php" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.posts.js" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Model_user.php" />
-        <item index="1" class="java.lang.String" itemvalue="PHP Script.User.php" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.posts.js" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Model_user.php" />
+        <item index="2" class="java.lang.String" itemvalue="PHP Script.User.php" />
       </list>
     </recent_temporary>
   </component>
@@ -342,7 +347,7 @@
       <workItem from="1495890317635" duration="1643000" />
       <workItem from="1495966128258" duration="4317000" />
       <workItem from="1495972097037" duration="4594000" />
-      <workItem from="1495980882119" duration="11970000" />
+      <workItem from="1495980882119" duration="14668000" />
     </task>
     <task id="LOCAL-00001" summary="Главная страница авторизованного пользователя">
       <created>1494444470645</created>
@@ -456,11 +461,18 @@
       <option name="project" value="LOCAL" />
       <updated>1495987006385</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="1) Поправлены новости&#10;2) Поправлены посты&#10;3) Новвведения в постах {&#10; Удаление постов&#10; Пожаловаться&#10;}&#10;... еще доделать админку...">
+      <created>1495998632623</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1495998632623</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221539000" />
+    <option name="totallyTimeSpent" value="224237000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -478,6 +490,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298351" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -491,7 +504,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -531,14 +543,15 @@
     <MESSAGE value="Добавлена возможность постинга" />
     <MESSAGE value="Обновление лайки" />
     <MESSAGE value="Недообновление для сохранения" />
-    <option name="LAST_COMMIT_MESSAGE" value="Недообновление для сохранения" />
+    <MESSAGE value="1) Поправлены новости&#10;2) Поправлены посты&#10;3) Новвведения в постах {&#10; Удаление постов&#10; Пожаловаться&#10;}&#10;... еще доделать админку..." />
+    <MESSAGE value="Собираю потихоньку js в отдельные файлики&#10; Пофиксил код начитабельность&#10; Осталось доделать админку, вход, и дособрать js&quot;ки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Собираю потихоньку js в отдельные файлики&#10; Пофиксил код начитабельность&#10; Осталось доделать админку, вход, и дособрать js&quot;ки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/templates/test.twig" />
     <entry file="file://$PROJECT_DIR$/assets/js/uikit.min.js" />
     <entry file="file://$PROJECT_DIR$/application/models/Model_post" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core.php">
@@ -610,13 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/twig/footer.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -657,13 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="358">
           <caret line="49" column="4" lean-forward="true" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -712,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -735,47 +727,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/twig/modal_post.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="79" column="31" lean-forward="false" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/News.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="42" column="66" lean-forward="false" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
-          <folding>
-            <marker date="1495996275021" expanded="true" signature="691:801" ph="..." />
-            <marker date="1495996275021" expanded="true" signature="739:801" ph="..." />
-            <marker date="1495996275021" expanded="true" signature="792:801" ph="..." />
-            <marker date="1495996275021" expanded="true" signature="803:804" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Model_news.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="34" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="106" column="116" lean-forward="false" selection-start-line="106" selection-start-column="116" selection-end-line="106" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/news.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="48" lean-forward="true" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -785,29 +740,6 @@
         <state relative-caret-position="306">
           <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Model_post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="21" column="77" lean-forward="false" selection-start-line="21" selection-start-column="77" selection-end-line="21" selection-end-column="77" />
-          <folding>
-            <marker date="1495997646666" expanded="true" signature="1024:1062" ph="SELECT * FRO... posts" />
-            <marker date="1495997646666" expanded="true" signature="2456:2487" ph="SELECT id FR... posts" />
-            <marker date="1495997646666" expanded="true" signature="2456:2488" ph="SELECT id FR... posts" />
-            <marker date="1495997646666" expanded="true" signature="2456:2507" ph="SELECT id FR... posts" />
-            <marker date="1495997646666" expanded="true" signature="2456:2536" ph="SELECT id FR... posts" />
-            <marker date="1495997646666" expanded="true" signature="3249:3276" ph="SELECT uid_l... posts" />
-            <marker date="1495997646666" expanded="true" signature="3249:3300" ph="SELECT uid_l... posts" />
-            <marker date="1495997646666" expanded="true" signature="3788:3822" ph="UPDATE posts... " />
-            <marker date="1495997646666" expanded="true" signature="3788:3845" ph="UPDATE posts... " />
-            <marker date="1495997646666" expanded="true" signature="4372:4406" ph="UPDATE posts... " />
-            <marker date="1495997646666" expanded="true" signature="4372:4407" ph="UPDATE posts... " />
-            <marker date="1495997646666" expanded="true" signature="4372:4430" ph="UPDATE posts... " />
-            <marker date="1495997646666" expanded="true" signature="4803:4850" ph="SELECT likes... posts" />
-            <marker date="1495997646666" expanded="true" signature="4826:4850" ph="UPDATE posts... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -821,29 +753,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/twig/header.twig">
+    <entry file="file://$PROJECT_DIR$/application/controllers/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="2" lean-forward="false" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+        <state relative-caret-position="282">
+          <caret line="106" column="116" lean-forward="false" selection-start-line="106" selection-start-column="116" selection-end-line="106" selection-end-column="116" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="35" column="32" lean-forward="true" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="32" />
+          <folding>
+            <marker date="1496084646944" expanded="true" signature="691:801" ph="..." />
+            <marker date="1496084646944" expanded="true" signature="739:801" ph="..." />
+            <marker date="1496084646944" expanded="true" signature="792:801" ph="..." />
+            <marker date="1496084646944" expanded="true" signature="803:804" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Feed.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="535">
+          <caret line="58" column="47" lean-forward="false" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
+          <folding>
+            <marker date="1496084692182" expanded="true" signature="751:876" ph="..." />
+            <marker date="1496084692182" expanded="true" signature="804:876" ph="..." />
+            <marker date="1496084692182" expanded="true" signature="863:876" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/welcome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="10" lean-forward="true" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Model_post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="68" column="94" lean-forward="false" selection-start-line="68" selection-start-column="94" selection-end-line="68" selection-end-column="94" />
+          <folding>
+            <marker date="1496085317517" expanded="true" signature="1073:1111" ph="SELECT * FRO... posts" />
+            <marker date="1496085317517" expanded="true" signature="2579:2610" ph="SELECT id FR... posts" />
+            <marker date="1496085317517" expanded="true" signature="2579:2611" ph="SELECT id FR... posts" />
+            <marker date="1496085317517" expanded="true" signature="2579:2630" ph="SELECT id FR... posts" />
+            <marker date="1496085317517" expanded="true" signature="2579:2659" ph="SELECT id FR... posts" />
+            <marker date="1496085317517" expanded="true" signature="3372:3399" ph="SELECT uid_l... posts" />
+            <marker date="1496085317517" expanded="true" signature="3372:3423" ph="SELECT uid_l... posts" />
+            <marker date="1496085317517" expanded="true" signature="3911:3945" ph="UPDATE posts... " />
+            <marker date="1496085317517" expanded="true" signature="3911:3968" ph="UPDATE posts... " />
+            <marker date="1496085317517" expanded="true" signature="4495:4529" ph="UPDATE posts... " />
+            <marker date="1496085317517" expanded="true" signature="4495:4530" ph="UPDATE posts... " />
+            <marker date="1496085317517" expanded="true" signature="4495:4553" ph="UPDATE posts... " />
+            <marker date="1496085317517" expanded="true" signature="4926:4973" ph="SELECT likes... posts" />
+            <marker date="1496085317517" expanded="true" signature="4949:4973" ph="UPDATE posts... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/news.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/twig/footer.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/posts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/feed.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="466">
+          <caret line="43" column="45" lean-forward="false" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/twig/header.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="56" column="16" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/twig/modal_post.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

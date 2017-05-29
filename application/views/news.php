@@ -2,7 +2,9 @@
 
 <div class="ui two column centered grid stackable">
     <div class="eight wide column">
+
         {% for i in 0..news.current_count - 1 %}
+
         <div class="ui card fluid">
             <div class="content">
                 <div class="header">{{ news.item[i].title }}</div>
@@ -22,7 +24,9 @@
                 </div>
             </div>
         </div>
+
         {% endfor %}
+        
     </div>
 </div>
 

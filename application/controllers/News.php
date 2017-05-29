@@ -33,7 +33,7 @@ class News extends CI_Controller
         // Начало активной ссылки
         $config["cur_tag_open"] = '<a class="active item">';
 
-        // Коонец активной ссылки
+        // Конец активной ссылки
         $config["cur_tag_close"] = '</a>';
 
         // Атрибуты к ссылкам

@@ -23,7 +23,8 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
         // line 3
         if (($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "count") == 0)) {
             // line 4
-            echo "<div class=\"ui two column centered grid stackable\">
+            echo "
+<div class=\"ui two column centered grid stackable\">
     <div class=\"eight wide column\">
         <div class=\"ui icon message\">
             <i class=\"photo icon\"></i>
@@ -32,7 +33,7 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
                     Станьте первым, кто опубликует первую запись!
                 </div>
                 <p>
-                    <button class=\"teal ui button\" onclick=\"\$('#modal-post').modal('show')\";>
+                    <button class=\"teal ui button\" onclick=\"\$('#modal-post').modal('show')\">
                         <i class=\"add circle icon\"></i>
                         Создать запись
                     </button>
@@ -44,27 +45,28 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
 
 ";
         } else {
-            // line 24
-            echo "<div class=\"ui two column centered grid stackable\">
+            // line 25
+            echo "
+<div class=\"ui two column centered grid stackable\">
     <div class=\"eight wide column\">
+
         ";
-            // line 26
+            // line 29
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable(range(0, ($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "current_count") - 1)));
             foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 27
-                echo "        <div class=\"ui card fluid\">
+                // line 30
+                echo "
+        <div class=\"ui card fluid\">
             <div class=\"content\">
                 <div class=\"right floated meta\">";
-                // line 29
+                // line 33
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "time"), "html", null, true);
                 echo "</div>
                 <img class=\"ui avatar image\" src=\"";
-                // line 30
+                // line 34
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "photo_50"), "html", null, true);
-                echo "\">
-                ";
-                // line 31
+                echo "\"> ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "first_name"), "html", null, true);
                 echo " ";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "last_name"), "html", null, true);
@@ -72,50 +74,58 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
             </div>
             <div class=\"image event\">
                 <img src=\"";
-                // line 34
-                echo twig_escape_filter($this->env, (isset($context["base_url"]) ? $context["base_url"] : null), "html", null, true);
-                echo "assets/images/posts/";
+                // line 37
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "image"), "html", null, true);
                 echo "\" style=\"max-height: 450px; background-size: cover;\">
                 <div class=\"ui inverted  dimmer\">
                     <div class=\"content\">
                         <div class=\"center\">
+
                             ";
-                // line 38
+                // line 42
                 if (($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "user"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "uid") == $this->getAttribute((isset($context["user"]) ? $context["user"] : null), "uid"))) {
-                    // line 39
-                    echo "                            <div onclick=\"delete_post( ";
+                    // line 43
+                    echo "
+                            <div onclick=\"del( ";
+                    // line 44
                     echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "id"), "html", null, true);
-                    echo " )\" class=\"ui red small button\"><i class=\"remove icon\"></i>Удалить запись</div>
+                    echo " )\" class=\"ui red small button\">
+                                <i class=\"remove icon\"></i> Удалить запись
+                            </div>
+
                             ";
                 } else {
-                    // line 41
-                    echo "                            <div class=\"ui orange small button\"><i class=\"warning sign icon\"></i>Пожаловаться</div>
+                    // line 49
+                    echo "
+                            <div class=\"ui orange small button\"><i class=\"warning sign icon\"></i>Пожаловаться</div>
+
                             ";
                 }
-                // line 43
-                echo "                        </div>
+                // line 53
+                echo "
+                        </div>
                     </div>
                 </div>
             </div>
             <div class=\"content\">
                 <span class=\"left floated\">
                     <img src=\"";
-                // line 49
-                echo twig_escape_filter($this->env, (isset($context["base_url"]) ? $context["base_url"] : null), "html", null, true);
-                echo "assets/images/smiles/";
+                // line 60
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "smile"), "html", null, true);
-                echo ".png\">
+                echo "\">
                 </span>
+
                 ";
-                // line 51
+                // line 63
                 $context["uid_likes"] = twig_split_filter($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "uid_likes"), ",");
-                // line 52
-                echo "                <span class=\"right floated\" onclick=\"like( ";
+                // line 64
+                echo "
+                <span class=\"right floated\" onclick=\"like( ";
+                // line 65
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "id"), "html", null, true);
                 echo " )\">
                    <i id=\"icon_";
-                // line 53
+                // line 66
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "id"), "html", null, true);
                 echo "\" class=\"heart ";
                 $context['_parent'] = (array) $context;
@@ -132,7 +142,7 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
                 $context = array_merge($_parent, array_intersect_key($context, $_parent));
                 echo " like icon\"></i>
                     <span id=\"";
-                // line 54
+                // line 67
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "id"), "html", null, true);
                 echo "\">";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["posts"]) ? $context["posts"] : null), "post"), (isset($context["i"]) ? $context["i"] : null), array(), "array"), "likes"), "html", null, true);
@@ -140,76 +150,28 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
                 </span>
             </div>
         </div>
+
         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
             $context = array_merge($_parent, array_intersect_key($context, $_parent));
-            // line 59
-            echo "    </div>
+            // line 73
+            echo "
+    </div>
 </div>
+
 ";
         }
-        // line 62
+        // line 78
         echo "
-<script>
-
-    \$('.image.event').dimmer({on: 'hover'});
-
-    function delete_post(post_id) {
-
-        \$.ajax({
-
-            url: \"/post/delete\",
-            data: { post_id : post_id },
-            dataType: \"json\",
-            type: \"POST\",
-            success: function (data) {
-
-                if(data.status === true) {
-                    location.reload();
-
-                } else {
-
-                    alert(\"Произошла ошибка...\");
-                }
-            },
-            beforeSend: function () {
-
-            }
-        })
-    }
-
-    function like(post_id) {
-
-        \$.ajax({
-
-            url: \"/post/like\",
-            data: { post_id : post_id },
-            dataType: \"json\",
-            type: \"POST\",
-            success: function (post) {
-
-                \$(\"#\" + post_id).html(post.likes);
-                // В зависимости от действия добавляем или убираем закрашивание иконки лайка
-                post.action == \"delete\" ?  \$(\"#icon_\" + post_id).removeClass(\"red\") :  \$(\"#icon_\" + post_id).addClass(\"red\");
-            },
-            beforeSend: function () {
-
-                // Пока грузиться анимируем
-                \$(\"#icon_\" + post_id)
-                    .transition({
-                        animation  : 'pulse',
-                        duration   : '1s'
-                    })
-                ;
-            }
-        })
-    }
-</script>
+<script src=\"";
+        // line 79
+        echo twig_escape_filter($this->env, (isset($context["base_url"]) ? $context["base_url"] : null), "html", null, true);
+        echo "assets/js/posts.js\"></script>
 
 ";
-        // line 119
+        // line 81
         $this->env->loadTemplate("twig/footer.twig")->display($context);
     }
 
@@ -225,6 +187,6 @@ class __TwigTemplate_055e11b6fba0be47bf042d864483f7df extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  213 => 119,  154 => 62,  149 => 59,  136 => 54,  119 => 53,  114 => 52,  112 => 51,  105 => 49,  97 => 43,  93 => 41,  87 => 39,  85 => 38,  76 => 34,  68 => 31,  64 => 30,  60 => 29,  56 => 27,  52 => 26,  48 => 24,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
+        return array (  175 => 81,  170 => 79,  167 => 78,  160 => 73,  146 => 67,  129 => 66,  125 => 65,  122 => 64,  120 => 63,  114 => 60,  105 => 53,  99 => 49,  91 => 44,  88 => 43,  86 => 42,  78 => 37,  68 => 34,  64 => 33,  59 => 30,  55 => 29,  49 => 25,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
     }
 }

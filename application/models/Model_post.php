@@ -3,6 +3,7 @@
 class Model_post extends CI_Model
 {
     public $upload_dir = "assets/images/posts/";
+    public $smile_dir = "assets/images/smiles/";
 
     /**
      * Получение постов
@@ -64,8 +65,8 @@ class Model_post extends CI_Model
             // Добавление поста в базу данных
             $query = $this->db->insert("posts", [
                 "uid" => $this->session->user["uid"],
-                "image" => $image_name,
-                "smile" => $this->input->post("smile") ,
+                "image" => base_url() . $this->upload_dir . $image_name,
+                "smile" => base_url() . $this->smile_dir . $this->input->post("smile") . ".png" ,
                 "time" => $time
             ]);
 

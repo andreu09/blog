@@ -24,6 +24,7 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
         // line 5
         echo twig_escape_filter($this->env, (isset($context["title"]) ? $context["title"] : null), "html", null, true);
         echo "</title>
+        <meta charset=\"UTF-8\">
         <link rel=\"stylesheet\" href=\"http://shmakov-andrey.ru/assets/semantic.min.css\">
         <script src=\"http://shmakov-andrey.ru/assets/js/jquery-3.2.1.min.js\"></script>
         <script src=\"http://shmakov-andrey.ru/assets/js/semantic.min.js\"></script>
@@ -37,30 +38,35 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
 
     <body>
         <div class=\"ui small menu\">
+
             <a href=\"/\" class=\"  ";
-        // line 19
+        // line 21
         if ((((isset($context["title"]) ? $context["title"] : null) == "Главная") || ((isset($context["title"]) ? $context["title"] : null) == "Подтверждение входа"))) {
             echo " active ";
         }
         echo " item\">
                 <i class=\"big camera retro icon\"></i>
             </a>
+
             <a href=\"/news\" class=\" ";
-        // line 22
+        // line 25
         if (((isset($context["title"]) ? $context["title"] : null) == "Новости")) {
             echo " active ";
         }
         echo " item\">
                 Новости
             </a>
+
             <div class=\"right menu\">
+
                 ";
-        // line 26
+        // line 31
         if ($this->getAttribute((isset($context["user"]) ? $context["user"] : null), "uid", array(), "any", true, true)) {
-            // line 27
-            echo "                <div class=\"ui dropdown item\">
+            // line 32
+            echo "
+                <div class=\"ui dropdown item\">
                     <img class=\"ui avatar image\" src=\"";
-            // line 28
+            // line 34
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : null), "photo_50"), "html", null, true);
             echo "\"> ";
             echo twig_escape_filter($this->env, $this->getAttribute((isset($context["user"]) ? $context["user"] : null), "first_name"), "html", null, true);
@@ -69,48 +75,55 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
             echo " <i class=\"dropdown icon\"></i>
                     <div class=\"menu\">
                         ";
-            // line 30
+            // line 36
             if (((isset($context["title"]) ? $context["title"] : null) == "Главная")) {
-                // line 31
+                // line 37
                 echo "                            <a class=\"item\" onclick=\"\$('#modal-post').modal('show');\">Создать запись</a>
                         ";
             }
-            // line 33
+            // line 39
             echo "
                         ";
-            // line 34
+            // line 40
             if ($this->getAttribute((isset($context["user"]) ? $context["user"] : null), "status")) {
-                // line 35
+                // line 41
                 echo "                            <a href=\"/admin\" class=\"item\">Админ панель</a>
                         ";
             }
-            // line 37
+            // line 43
             echo "                        <a href=\"user/out\" class=\"item\">Выйти</a>
                     </div>
                 </div>
+
                 ";
         } else {
-            // line 41
-            echo "                <div class=\"item\">
+            // line 48
+            echo "
+                <div class=\"item\">
                     <a onclick=\"\$(this).addClass('loading')\" class=\"ui vk button\" style=\"color:white\" href=\"https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://shmakov-andrey.ru/user/vk_auth&response_type=code&v=5.64\">
                         <i class=\"vk icon\"></i>
                         Войти
                     </a>
                 </div>
+
                 ";
         }
-        // line 48
-        echo "            </div>
+        // line 57
+        echo "                
+            </div>
         </div>
 
     ";
-        // line 51
+        // line 61
         if (((isset($context["title"]) ? $context["title"] : null) == "Главная")) {
-            // line 52
-            echo "        ";
+            // line 62
+            echo "
+        ";
+            // line 63
             $this->env->loadTemplate("twig/modal_post.twig")->display($context);
-            // line 53
-            echo "    ";
+            // line 64
+            echo "
+    ";
         }
     }
 
@@ -126,6 +139,6 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  113 => 53,  110 => 52,  108 => 51,  103 => 48,  94 => 41,  88 => 37,  84 => 35,  82 => 34,  79 => 33,  75 => 31,  73 => 30,  61 => 27,  59 => 26,  50 => 22,  42 => 19,  25 => 5,  213 => 119,  154 => 62,  149 => 59,  136 => 54,  119 => 53,  114 => 52,  112 => 51,  105 => 49,  97 => 43,  93 => 41,  87 => 39,  85 => 38,  76 => 34,  68 => 31,  64 => 28,  60 => 29,  56 => 27,  52 => 26,  48 => 24,  26 => 4,  24 => 3,  21 => 2,  19 => 1,);
+        return array (  125 => 64,  123 => 63,  120 => 62,  118 => 61,  112 => 57,  101 => 48,  94 => 43,  90 => 41,  88 => 40,  85 => 39,  81 => 37,  79 => 36,  70 => 34,  66 => 32,  64 => 31,  53 => 25,  44 => 21,  25 => 5,  19 => 1,);
     }
 }

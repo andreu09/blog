@@ -3,6 +3,7 @@
 
         <meta charset="UTF-8">
         <title>{{ title  }}</title>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="http://shmakov-andrey.ru/assets/semantic.min.css">
         <script src="http://shmakov-andrey.ru/assets/js/jquery-3.2.1.min.js"></script>
         <script src="http://shmakov-andrey.ru/assets/js/semantic.min.js"></script>
@@ -16,14 +17,19 @@
 
     <body>
         <div class="ui small menu">
+
             <a href="/" class="  {% if title == "Главная" or title == "Подтверждение входа"   %} active {% endif %} item">
                 <i class="big camera retro icon"></i>
             </a>
+
             <a href="/news" class=" {% if title == "Новости" %} active {% endif %} item">
                 Новости
             </a>
+
             <div class="right menu">
+
                 {% if user.uid is defined  %}
+
                 <div class="ui dropdown item">
                     <img class="ui avatar image" src="{{ user.photo_50 }}"> {{ user.first_name }} {{ user.last_name }} <i class="dropdown icon"></i>
                     <div class="menu">
@@ -37,17 +43,23 @@
                         <a href="user/out" class="item">Выйти</a>
                     </div>
                 </div>
+
                 {% else %}
+
                 <div class="item">
                     <a onclick="$(this).addClass('loading')" class="ui vk button" style="color:white" href="https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://shmakov-andrey.ru/user/vk_auth&response_type=code&v=5.64">
                         <i class="vk icon"></i>
                         Войти
                     </a>
                 </div>
+
                 {% endif %}
+
             </div>
         </div>
 
     {% if title == "Главная" %}
+
         {% include 'twig/modal_post.twig' %}
+
     {% endif %}
