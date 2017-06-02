@@ -23,9 +23,13 @@ class __TwigTemplate_9dcb8b88c57ca25ff1d2570a5b1b8b1a extends Twig_Template
 
     // Инициализация табов
     \$('.menu .item').tab();
+    \$('.ui .button').tab();
 
     // Инициализация меню наведения
     \$('.image.event').dimmer({on: 'hover'});
+
+    // Инициализация чек-бокса
+    \$('.ui.checkbox').checkbox();
 
 </script>
 

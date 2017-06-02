@@ -1,23 +1,7 @@
 {% include 'twig/header.twig' %}
 
 <div class="ui grid container stackable">
-    <div class="five wide column ">
-        <div class="ui vertical menu fluid">
-            <a class="item" data-tab="add-news">
-                <i class="large browser icon"></i> Создать новость
-            </a>
-            <div class="ui dropdown item">
-                Пользователи
-                <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item" onclick="$('#block-users').modal('show');">  <i class="large ban icon"></i> Заблокированные</a>
-                    <a class="item" onclick="$('#admin-users').modal('show');">  <i class="large check circle icon"></i> Администраторы</a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="eleven wide column">
+    <div class="sixteen wide column">
         <div class="ui bottom attached tab active segment" data-tab="add-news">
             <div class="ui form">
                 <div class="field">
@@ -43,97 +27,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Администраторы -->
-        <div class="ui fullscreen modal" id="admin-users">
-            <i class="close icon"></i>
-            <div class="header">
-                Администраторы:
-            </div>
-            <div class="content">
-
-                        {% for i in 0..admins.count - 1 %}
-                        <div class="column">
-                            <a class="ui yellow image label">
-                                <img src="{{ admins.user[i].photo_200 }}">
-                                {{ admins.user[i].first_name }} {{ admins.user[i].last_name }}
-                                <div class="detail">
-                                    <a target="_blank" href="/admin/action/delete/{{  admins.user[i].uid }}">
-                                        Снять с должности
-                                    </a>
-                                </div>
-                                <div class="detail">Co-worker</div>
-                            </a>
-                            <div class="ui fluid  card">
-                                <div class="image">
-                                    <img src="{{ admins.user[i].photo_200 }}">
-                                </div>
-                                <div class="content">
-                                    <a class="header">{{ admins.user[i].first_name }} {{ admins.user[i].last_name }}</a>
-                                </div>
-                                <div class="extra content">
-                                    <div class="ui two buttons">
-                                        <a target="_blank" href="/admin/action/delete/{{  admins.user[i].uid }}">
-                                            <div class="ui basic yellow button">
-                                                Снять с должности
-                                            </div>
-                                        </a>
-                                        <a target="_blank" href="/admin/action/block[action=add]/{{  admins.user[i].uid }}">
-                                            <div class="ui basic red button">
-                                                Заблокировать доступ
-                                            </div>
-                                        </a>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Заблокированные -->
-        <div class="ui fullscreen modal" id="block-users">
-            <i class="close icon"></i>
-            <div class="header">
-                Заблокированные:
-            </div>
-            <div class="content">
-                <div class="ui four column grid">
-                    <div class="row">
-                        {% if block_users.count == 0 %}
-
-                        Заблокированных пользователей не найдно.
-
-                        {% else %}
-
-                        {% for i in 0..block_users.count - 1 %}
-                        <div class="column">
-                            <div class="ui fluid  card">
-                                <div class="image">
-
-                                    <img src="{{ block_users[i].photo_200 }}">
-                                </div>
-                                <div class="content">
-                                    <a class="header">{{ block_users[i].first_name }} {{ block_users[i].last_name }}</a>
-                                </div>
-                                <div class="extra content">
-                                    <a target="_blank" href="/admin/action/block[action=delete]/{{ block_users[i].uid }}">
-                                        <div class="fluid ui button basic green button">
-                                            Снять блокировку
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-
-                        {% endif %}
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
 

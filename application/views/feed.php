@@ -8,14 +8,8 @@
             <i class="photo icon"></i>
             <div class="content">
                 <div class="header">
-                    Станьте первым, кто опубликует первую запись!
+                    Еще нет опубликованных записей.
                 </div>
-                <p>
-                    <button class="teal ui button" onclick="$('#modal-post').modal('show')">
-                        <i class="add circle icon"></i>
-                        Создать запись
-                    </button>
-                </p>
             </div>
         </div>
     </div>

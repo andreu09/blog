@@ -1,4 +1,4 @@
-<div class="ui fullscreen modal" id="modal-post">
+<div class="ui modal" id="modal-post">
     <i class="close icon"></i>
     <div class="header">
         Создание публикации
@@ -16,7 +16,7 @@
                     {% for i in 1..10 %}
 
                     <div class="item" data-value="{{ i }}">
-                        <img class="ui mini avatar image" src="http://shmakov-andrey.ru/assets/images/smiles/{{ i }}.png">
+                        <img class="ui mini avatar image" src="{{ base_url }}/assets/images/smiles/{{ i }}.png">
                     </div>
 
                     {% endfor %}

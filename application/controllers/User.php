@@ -19,6 +19,7 @@ class User extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->model('Model_user');
+        $this->load->model('Model_post');
 
         $this->first_name   = isset($this->session->user["uid"]) ? $this->Model_user->get("user",$this->session->user["uid"])->first_name : null;
         $this->last_name    = isset($this->session->user["uid"]) ? $this->Model_user->get("user",$this->session->user["uid"])->last_name : null;
@@ -27,6 +28,24 @@ class User extends CI_Controller
         $this->photo_50     = isset($this->session->user["uid"]) ? $this->Model_user->get("user",$this->session->user["uid"])->photo_50 : null;
         $this->photo_100    = isset($this->session->user["uid"]) ? $this->Model_user->get("user",$this->session->user["uid"])->photo_100 : null;
         $this->photo_200    = isset($this->session->user["uid"]) ? $this->Model_user->get("user",$this->session->user["uid"])->photo_200 : null;
+    }
+
+    public function profile()
+    {
+        if( isset($this->session->user["uid"]) ) {
+
+            echo $this->twig->render("profile.php", [
+                "title"     => "Мой профиль",
+                "base_url"  => base_url(),
+                "user"      => $this->session->user,
+                "posts"     => $this->Model_post->get("0",$this->session->user["uid"])
+            ]);
+
+        } else {
+
+            // Пользователь не вошел на сайт
+            show_404();
+        }
     }
 
     /**

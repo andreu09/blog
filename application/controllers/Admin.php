@@ -20,9 +20,9 @@ class Admin extends CI_Controller
     {
         if( isset($this->session->user["uid"]) ) {
 
-            if( $this->Model_user->get("user",$this->session->user["uid"])[0]["status"] ) {
+            if( $this->Model_user->get("user",$this->session->user["uid"])->status ) {
 
-                echo $this->twig->render("admin.php", array("admins" => $this->Model_admin->get(), "user" => $this->session->user, "title" => "Админ панель","block_users" => $this->Model_user->get("block") ));
+                echo $this->twig->render("admin.php", array("admins" => $this->Model_admin->get(), "user" => $this->session->user, "title" => "Админ панель" ));
 
             } else {
 

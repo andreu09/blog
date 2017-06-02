@@ -20,23 +20,19 @@ class __TwigTemplate_e8e1e691d95a73ab3b57635eded0fa2b extends Twig_Template
         // line 2
         echo "
 <div class=\"ui two column centered grid stackable\">
-    <div class=\"eight wide column\">
-        <div class=\"ui icon message\">
-            <i class=\"add user icon\"></i>
-            <div class=\"content\">
-                <div class=\"header\">
-                    Требуется авторизация
-                </div>
-                <p>
-                    Справа вверху нажмите \"Войти\"
-                </p>
-            </div>
+    <div class=\"five wide column\">
+        <div class=\"ui attached segment\">
+            <h4 class=\"ui centered dividing header\">Подтверждение входа</h4>
+            <a  onclick=\"\$(this).addClass('loading')\" class=\"ui vk button fluid\" style=\"color:white\" href=\"https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://shmakov-andrey.ru/user/vk_auth&response_type=code&v=5.64\">
+                <i class=\"vk icon\"></i>
+                Авторизация с помощью VK
+            </a>
         </div>
     </div>
 </div>
 
 ";
-        // line 19
+        // line 15
         $this->env->loadTemplate("twig/footer.twig")->display($context);
     }
 
@@ -52,6 +48,6 @@ class __TwigTemplate_e8e1e691d95a73ab3b57635eded0fa2b extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  40 => 19,  21 => 2,  19 => 1,);
+        return array (  36 => 15,  21 => 2,  19 => 1,);
     }
 }

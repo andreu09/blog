@@ -76,9 +76,9 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
                     <div class=\"menu\">
                         ";
             // line 36
-            if (((isset($context["title"]) ? $context["title"] : null) == "Главная")) {
+            if (((isset($context["title"]) ? $context["title"] : null) != "Мой профиль")) {
                 // line 37
-                echo "                            <a class=\"item\" onclick=\"\$('#modal-post').modal('show');\">Создать запись</a>
+                echo "                            <a href=\"user/profile\" class=\"item\">Мой профиль</a>
                         ";
             }
             // line 39
@@ -96,35 +96,11 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
                 </div>
 
                 ";
-        } else {
-            // line 48
-            echo "
-                <div class=\"item\">
-                    <a onclick=\"\$(this).addClass('loading')\" class=\"ui vk button\" style=\"color:white\" href=\"https://oauth.vk.com/authorize?client_id=5240196&display=page&redirect_uri=http://shmakov-andrey.ru/user/vk_auth&response_type=code&v=5.64\">
-                        <i class=\"vk icon\"></i>
-                        Войти
-                    </a>
-                </div>
-
-                ";
         }
-        // line 57
-        echo "                
+        // line 48
+        echo "
             </div>
-        </div>
-
-    ";
-        // line 61
-        if (((isset($context["title"]) ? $context["title"] : null) == "Главная")) {
-            // line 62
-            echo "
-        ";
-            // line 63
-            $this->env->loadTemplate("twig/modal_post.twig")->display($context);
-            // line 64
-            echo "
-    ";
-        }
+        </div>";
     }
 
     public function getTemplateName()
@@ -139,6 +115,6 @@ class __TwigTemplate_4a1bd5613b5d53ac39a382b54c85d229 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  125 => 64,  123 => 63,  120 => 62,  118 => 61,  112 => 57,  101 => 48,  94 => 43,  90 => 41,  88 => 40,  85 => 39,  81 => 37,  79 => 36,  70 => 34,  66 => 32,  64 => 31,  53 => 25,  44 => 21,  25 => 5,  19 => 1,);
+        return array (  101 => 48,  94 => 43,  90 => 41,  88 => 40,  85 => 39,  81 => 37,  70 => 34,  66 => 32,  64 => 31,  53 => 25,  44 => 21,  25 => 5,  79 => 36,  77 => 48,  34 => 10,  28 => 7,  21 => 2,  19 => 1,);
     }
 }

@@ -36,6 +36,7 @@ class Model_post extends CI_Model
         } else {
 
             $posts = $this->db->query("SELECT * FROM posts WHERE uid = '$uid' ")->result_array();
+            $posts["count"] = count($posts);
 
         }
 
